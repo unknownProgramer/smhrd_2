@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="kr.color.mapper.mainMapper">
 
-	<select id="mainPage" resultType="kr.color.domain.userInfo">
+	<select id="mainPage" resultType="kr.color.domain.UserInfo">
 		select * from UserInfo
 	</select>
 

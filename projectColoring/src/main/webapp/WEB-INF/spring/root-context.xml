@@ -10,9 +10,9 @@
    <!-- DB연결(Spring에서 제공해주는 API-X, HikariCP(DBCP) API) -->
    <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
       <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-      <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/bigdata"/>
-      <property name="username" value="user"/>
-      <property name="password" value="12345"/>
+      <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/color"/>
+      <property name="username" value="color_user"/>
+      <property name="password" value="1234"/>
     </bean>
     <!-- Connection POOL을 만드는 부분 -->   
    <bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
@@ -25,6 +25,6 @@
    </bean>
    
    <!-- BoardMapper들을 Spring Conatainer에 객체를 생성하는 부분(Scan) -->
-   <mybatis-spring:scan base-package="kr.color.web"/>
+   <mybatis-spring:scan base-package="kr.color.mapper"/>
    
 </beans>
