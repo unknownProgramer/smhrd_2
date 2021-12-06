@@ -140,6 +140,7 @@ section {
 	background-color: #fec503
 }
 
+
 @media (min-width:768px) {
 	.navbar-default
 	{
@@ -199,6 +200,34 @@ section {
 /*--------------------
 4. Sections
 --------------------*/
+.search button{
+    border: none;
+    right: 2px;
+    top: 2px;
+    width: 50px;
+    height: 46px;
+    line-height: 42px;
+    background: transparent;
+    cursor: pointer;
+
+}
+
+.dye:hover{
+    color: rgb(254,209,54);
+}
+
+.search input{
+    display: block;
+    width: 100%;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    height: 50px;
+    font-size: 14px;
+    padding: 15px;
+    padding-right: 50px;
+    border-radius: 8px;
+}
+
 
 .section-title {
 	padding-bottom: 30px;
@@ -219,6 +248,39 @@ section {
 .mz-module .section-title {
     padding: 40px 0;
 }
+
+.palettes_list{
+    padding-bottom: 40px;
+    padding-top: 40px;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 10%;
+ }
+ .palettes{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 40px;
+    list-style: none;
+ }
+ .palettes>li{
+    display: block;
+    width: 100%;
+ }
+ .palettes>li>a{
+    width: 100%;
+    padding: 0;
+    display: flex;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 0 2px rgb(0 0 0 / 10%);
+ }
+ .palettes>li>a>div{
+    height: 50px;
+    flex: 1;
+ }
+
 
 /*--------------------
 4.1. About
@@ -635,7 +697,8 @@ font-size: 11px;
     -ms-user-select: none;
     user-select: none;
     background-image: none;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
+    border-color: whitesmoke;
     border-radius: 4px;
 }
 

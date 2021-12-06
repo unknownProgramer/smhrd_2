@@ -10,11 +10,11 @@ import lombok.NoArgsConstructor;
 public class Palettes {
 	private int deep_seq;
 	private int text_seq;
-	private String deep_color1;
-	private String deep_color2;
-	private String deep_color3;
-	private String deep_color4;
-	private String deep_color5;
+	private String palette_color1;
+	private String palette_color2;
+	private String palette_color3;
+	private String palette_color4;
+	private String palette_color5;
 	private String regdit_date;
 	private int user_seq;
 }
