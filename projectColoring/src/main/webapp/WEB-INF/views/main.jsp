@@ -123,165 +123,17 @@
 		
 		<div class="palettes_list">
 			<ul class="palettes">
-				<li>
-					<a href="" title="Test Palette">
-						<div style="background-color: #00ab00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-						<div style="background-color: #7f00ff;"></div>
-						<div style="background-color: #ffcf00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-					</a>
-				</li>
-
-				<li>
-					<a href="" title="Test Palette">
-						<div style="background-color: #00ab00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-						<div style="background-color: #7f00ff;"></div>
-						<div style="background-color: #ffcf00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-					</a>
-				</li>
-
-				<li>
-					<a href="" title="Test Palette">
-						<div style="background-color: #00ab00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-						<div style="background-color: #7f00ff;"></div>
-						<div style="background-color: #ffcf00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-					</a>
-				</li>
-
-				<li>
-					<a href="" title="Test Palette">
-						<div style="background-color: #00ab00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-						<div style="background-color: #7f00ff;"></div>
-						<div style="background-color: #ffcf00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-					</a>
-				</li>
-
-				<li>
-					<a href="" title="Test Palette">
-						<div style="background-color: #00ab00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-						<div style="background-color: #7f00ff;"></div>
-						<div style="background-color: #ffcf00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-					</a>
-				</li>
-
-				<li>
-					<a href="" title="Test Palette">
-						<div style="background-color: #00ab00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-						<div style="background-color: #7f00ff;"></div>
-						<div style="background-color: #ffcf00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-					</a>
-				</li>
-
-				<li>
-					<a href="" title="Test Palette">
-						<div style="background-color: #00ab00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-						<div style="background-color: #7f00ff;"></div>
-						<div style="background-color: #ffcf00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-					</a>
-				</li>
-
-				<li>
-					<a href="" title="Test Palette">
-						<div style="background-color: #00ab00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-						<div style="background-color: #7f00ff;"></div>
-						<div style="background-color: #ffcf00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-					</a>
-				</li>
-
-				<li>
-					<a href="" title="Test Palette">
-						<div style="background-color: #00ab00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-						<div style="background-color: #7f00ff;"></div>
-						<div style="background-color: #ffcf00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-					</a>
-				</li>
-
-				<li>
-					<a href="" title="Test Palette">
-						<div style="background-color: #00ab00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-						<div style="background-color: #7f00ff;"></div>
-						<div style="background-color: #ffcf00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-					</a>
-				</li>
-
-				<li>
-					<a href="" title="Test Palette">
-						<div style="background-color: #00ab00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-						<div style="background-color: #7f00ff;"></div>
-						<div style="background-color: #ffcf00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-					</a>
-				</li>
-
-				<li>
-					<a href="" title="Test Palette">
-						<div style="background-color: #00ab00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-						<div style="background-color: #7f00ff;"></div>
-						<div style="background-color: #ffcf00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-					</a>
-				</li>
-
-				<li>
-					<a href="" title="Test Palette">
-						<div style="background-color: #00ab00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-						<div style="background-color: #7f00ff;"></div>
-						<div style="background-color: #ffcf00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-					</a>
-				</li>
-
-				<li>
-					<a href="" title="Test Palette">
-						<div style="background-color: #00ab00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-						<div style="background-color: #7f00ff;"></div>
-						<div style="background-color: #ffcf00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-					</a>
-				</li>
-
-				<li>
-					<a href="" title="Test Palette">
-						<div style="background-color: #00ab00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-						<div style="background-color: #7f00ff;"></div>
-						<div style="background-color: #ffcf00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-					</a>
-				</li>
-
-				<li>
-					<a href="" title="Test Palette">
-						<div style="background-color: #00ab00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-						<div style="background-color: #7f00ff;"></div>
-						<div style="background-color: #ffcf00;"></div>
-						<div style="background-color: #00b2d4;"></div>
-					</a>
-				</li>
+				<c:forEach var="vo" items="${list}">
+					<li>
+						<a>
+							<div style="background-color: ${vo.palette_color1};"></div>
+							<div style="background-color: ${vo.palette_color2};"></div>
+							<div style="background-color: ${vo.palette_color3};"></div>
+							<div style="background-color: ${vo.palette_color4};"></div>
+							<div style="background-color: ${vo.palette_color5};"></div>
+						</a>
+					</li>
+				</c:forEach>
 			</ul>
 		</div>
 

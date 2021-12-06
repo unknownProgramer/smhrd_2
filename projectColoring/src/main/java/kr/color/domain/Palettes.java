@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Palettes {
-	private int deep_seq;
-	private int text_seq;
+	private int palette_seq;
+	private int txt_seq;
 	private String palette_color1;
 	private String palette_color2;
 	private String palette_color3;

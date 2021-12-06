@@ -4,10 +4,9 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import kr.color.domain.UserInfo;
+import kr.color.domain.Palettes;
 
 @Mapper
 public interface mainMapper {
-	public List<UserInfo> mainPage();
-
+	public List<Palettes> getMainList();
 }
