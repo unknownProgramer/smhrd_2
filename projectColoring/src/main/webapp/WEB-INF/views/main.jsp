@@ -14,10 +14,10 @@
 		<link rel="icon" href="favicon.ico">
 		<title>Coloring Bootstrap HTML</title>
 		<!-- Bootstrap core CSS -->
-		<link href="${cpath}/resources/bootstrap.min.css" rel="stylesheet">
+		<link href="${cpath}/resources/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<!-- Custom styles for this template -->
-		<link href="${cpath}/resources/style.css" rel="stylesheet">
+		<link href="${cpath}/resources/css/style.css" rel="stylesheet">
 		<style>
 			#logo{
 				height: 70px;
@@ -47,7 +47,7 @@
 					<span class="icon-bar"></span>
 					</button>
 					<a class="navbar-brand page-scroll" href="#page-top">
-						<img id="logo" src="images/logo.png" alt="Treviso theme logo"></a>
+						<img id="logo" src="${cpath}/resources/images/logo.png" alt="Treviso theme logo"></a>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -331,7 +331,7 @@
 						<h4 class="modal-title" id="Modal-label-1">Dean & Letter</h4>
 					</div>
 					<div class="modal-body">
-						<img src="images/demo/portfolio-1.jpg" alt="img01" class="img-responsive" />
+						<img src="${cpath}/resources/images/demo/portfolio-1.jpg" alt="img01" class="img-responsive" />
 						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
 						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
 					</div>
@@ -351,7 +351,7 @@
 						<h4 class="modal-title" id="Modal-label-2">Startup Framework</h4>
 					</div>
 					<div class="modal-body">
-						<img src="images/demo/portfolio-2.jpg" alt="img01" class="img-responsive" />
+						<img src="${cpath}/resources/images/demo/portfolio-2.jpg" alt="img01" class="img-responsive" />
 						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
 						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
 					</div>
@@ -371,7 +371,7 @@
 						<h4 class="modal-title" id="Modal-label-3">Lamp & Velvet</h4>
 					</div>
 					<div class="modal-body">
-						<img src="images/demo/portfolio-3.jpg" alt="img01" class="img-responsive" />
+						<img src="${cpath}/resources/images/demo/portfolio-3.jpg" alt="img01" class="img-responsive" />
 						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
 						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
 					</div>
@@ -391,7 +391,7 @@
 						<h4 class="modal-title" id="Modal-label-4">Smart Name</h4>
 					</div>
 					<div class="modal-body">
-						<img src="images/demo/portfolio-4.jpg" alt="img01" class="img-responsive" />
+						<img src="${cpath}/resources/images/demo/portfolio-4.jpg" alt="img01" class="img-responsive" />
 						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
 						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
 					</div>
@@ -411,7 +411,7 @@
 						<h4 class="modal-title" id="Modal-label-5">Fast People</h4>
 					</div>
 					<div class="modal-body">
-						<img src="images/demo/portfolio-5.jpg" alt="img01" class="img-responsive" />
+						<img src="${cpath}/resources/images/demo/portfolio-5.jpg" alt="img01" class="img-responsive" />
 						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
 						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
 					</div>
