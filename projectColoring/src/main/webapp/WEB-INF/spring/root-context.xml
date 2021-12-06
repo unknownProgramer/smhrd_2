@@ -24,7 +24,7 @@
        <property name="dataSource" ref="dataSource"/>
    </bean>
    
-   <!-- BoardMapper들을 Spring Conatainer에 객체를 생성하는 부분(Scan) -->
+   <!-- Mapper들을 Spring Conatainer에 객체를 생성하는 부분(Scan) -->
    <mybatis-spring:scan base-package="kr.color.mapper"/>
    
 </beans>
