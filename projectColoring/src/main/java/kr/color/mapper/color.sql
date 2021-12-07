@@ -15,3 +15,9 @@ select t.txt_content, jaro_winkler_similarity('lavender',t.txt_content), p.palet
 
 -- 팔레트 텍스트 입력 셀렉트 --
 select p.palette_seq, t.txt_seq, p.palette_color1, p.palette_color2, p.palette_color3, p.palette_color4, p.palette_color5, p.regdit_date, p.user_seq from inputtext t, palettes p where t.txt_seq = p.txt_seq order by jaro_winkler_similarity('lavender',t.txt_content) desc limit 10
+
+use color;
+show tables;
+select * from palettes;
+
+show databases
