@@ -9,4 +9,6 @@ import kr.color.domain.Palettes;
 @Mapper
 public interface mainMapper {
 	public List<Palettes> getMainList();
+	
+	public List<Palettes> genPalette(String inputText);
 }

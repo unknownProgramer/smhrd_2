@@ -30,8 +30,6 @@
 				width: 20%;
 				height: 20%;
 			}
-
-
 		</style>
 	</head>
 	<body id="page-top">
@@ -151,9 +149,9 @@
 
 				<form>
 					<div class="input-group" style="margin : 0% 20% 0% 20%;">
-					  <input type="text" class="form-control" placeholder="Search" style="height: 40px;">
+					  <input id="inputText" type="text" class="form-control" placeholder="Search" style="height: 40px;">
 					  <div class="input-group-btn">
-						<button class="btn btn-default" type="submit">
+						<button onclick="sendInput()" class="btn btn-default" type="button">
 						  <i class="glyphicon glyphicon-search"></i>
 						</button>
 					  </div>
@@ -161,19 +159,11 @@
 				  </form>
 				
 				<div class="palettes_list" style="margin-top: 0%;">
-					<ul class="palettes">
-						<li>
-							<a href="" title="Test Palette">
-								<div style="background-color: #00ab00;"></div>
-								<div style="background-color: #00b2d4;"></div>
-								<div style="background-color: #7f00ff;"></div>
-								<div style="background-color: #ffcf00;"></div>
-								<div style="background-color: #00b2d4;"></div>
-							</a>
-						</li>
+					<ul id="palettes_result" class="palettes">
 					</ul>
 				</div>
-
+			</div>
+		</section>
 		<!-- Modal for portfolio item 1 -->
 		<div class="modal fade" id="Modal-1" tabindex="-1" role="dialog" aria-labelledby="Modal-label-1">
 			<div class="modal-dialog" role="document">
@@ -281,5 +271,37 @@
 		<script src="${cpath}resources/js/bootstrap.min.js"></script>
 		<script src="${cpath}resources/js/SmoothScroll.js"></script>
 		<script src="${cpath}resources/js/theme-scripts.js"></script>
+		<script type="text/javascript">
+			function sendInput() {
+				var inputText= $("#inputText").val();
+		        if(inputText==""){
+		           alert("텍스트를 입력해주세요.");
+		           $("#inputText").focus();
+		           return false;
+		        }
+				$.ajax({
+					url : "${cpath}//genPalette.do",
+					type : "get",
+					data :	{"inputText" : inputText},
+					dataType : "json",
+					success : showPalResult,
+					error : function(){alert("fail");}
+				});
+			}
+			function showPalResult(data) {
+				for (var i=0; i<4; i++) {
+					var view = "<li>";
+					view += "<a href='' title=''>";
+					view += "<div style='background-color: "+data[i].palette_color1+";'></div>";
+					view += "<div style='background-color: "+data[i].palette_color2+";'></div>";
+					view += "<div style='background-color: "+data[i].palette_color3+";'></div>";
+					view += "<div style='background-color: "+data[i].palette_color4+";'></div>";
+					view += "<div style='background-color: "+data[i].palette_color5+";'></div>";
+					view += "</a>";
+					view += "</li>";
+					$("#palettes_result").append(view).children(':last').hide().fadeIn();
+				}
+			}
+		</script>
 	</body>
 </html>
