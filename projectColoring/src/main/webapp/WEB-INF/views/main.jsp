@@ -54,7 +54,7 @@
 							<a href="#page-top"></a>
 						</li>
 						<li>
-							<a class="page-scroll" href="#about">Starts</a>
+							<a class="page-scroll" href="#about">Start</a>
 						</li>
 						<li>
 							<a class="page-scroll" href="#contact">Login</a>
@@ -73,7 +73,7 @@
 					<div class="section-title">
 						<h2 class="dye"><b>Describe Your Emotions</b></h2>
 						<button type="button" class="btn btn-secondary" style="margin-top: 50px;">
-							<a class="page-scroll" href="#about">Starts</a>
+							<a class="page-scroll" href="#about">START</a>
 						</button>
 						<div class="color">
 							<ul class="bycolor">
@@ -142,7 +142,7 @@
 				<div class="row">
 					<div class="col-lg-12 text-center">
 						<div class="section-title">
-							<h2>STARTS</h2>
+							<h2>START</h2>
 						</div>
 					</div>
 				</div>
