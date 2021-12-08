@@ -1,5 +1,6 @@
 package kr.color.web;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class AjaxController {
 	public List<Palettes> genPalette(String inputText) {
 		System.out.println("입력 받은 값 : "+ inputText);
 		List<Palettes> palettes = mapper.genPalette(inputText);
-		// Collections.shuffle(palettes);
+		Collections.shuffle(palettes);
 		return palettes;
 	}
 }
