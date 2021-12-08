@@ -71,9 +71,9 @@
 								<div class="modal-dialog" role="document">
 									<div class="login-form" style="margin-bottom: 10%">
 										<form action="${cpath}/Login.do" method="post">
-											<input type="text" name="userId" class="text-field"
+											<input type="text" name="user_id" class="text-field"
 												placeholder="아이디"> <input type="password"
-												name="userPwd" class="text-field" placeholder="비밀번호">
+												name="user_pwd" class="text-field" placeholder="비밀번호">
 											<input type="submit" value="로그인" class="submit-btn">
 										</form>
 										<div class="links">

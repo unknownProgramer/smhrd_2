@@ -8,12 +8,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserInfo {
-	private int userSeq;
-	private String userId;
-	private String userPwd;
-	private String userName;
-	private String userEmail;
-	private String userPhone;
-	private int userJoindate;
+	private int user_seq;
+	private String user_id;
+	private String user_pwd;
+	private String user_name;
+	private String user_email;
+	private String user_phone;
+	private int user_joindate;
 	private int adminYn;
 }
