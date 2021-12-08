@@ -45,7 +45,7 @@
 
 </head>
 <body id="page-top">
-	<nav class="navbar navbar-default" style="padding-top:0%">
+	<nav class="navbar navbar-default" style="padding-top: 0%">
 		<div class="container">
 			<div class="navbar-header page-scroll">
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -59,36 +59,35 @@
 					alt="Treviso theme logo"></a>
 			</div>
 			<div class="collapse navbar-collapse"
-				id="bs-example-navbar-collapse-1" style="padding-top:0.6%">
+				id="bs-example-navbar-collapse-1" style="padding-top: 0.6%">
 				<ul class="nav navbar-nav navbar-right">
 					<li class="hidden"><a href="#page-top"></a></li>
-					<li>
-						<c:if test="${userVO==null}">
-						<!-- modal 시작 -->
-						<button id="loginBtn" class="btn btn-info">로그인</button>
-						<div class="modal fade" id="loginModal" tabindex="-1"
-							role="dialog" aria-labelledby="exampleModalLabel"
-							aria-hidden="true">
-							<div class="modal-dialog" role="document">
-								<div class="login-form" style="margin-bottom: 10%">
-									<form>
-										<input type="text" name="email" class="text-field"
-											placeholder="아이디"> <input type="password"
-											name="password" class="text-field" placeholder="비밀번호">
-										<input type="submit" value="로그인" class="submit-btn">
-									</form>
-									<div class="links">
-										<a href="#">비밀번호를 잊어버리셨나요?</a>
+					<li><c:if test="${userVO==null}">
+							<!-- modal 시작 -->
+							<button id="loginBtn" class="btn btn-info">로그인</button>
+							<div class="modal fade" id="loginModal" tabindex="-1"
+								role="dialog" aria-labelledby="exampleModalLabel"
+								aria-hidden="true">
+								<div class="modal-dialog" role="document">
+									<div class="login-form" style="margin-bottom: 10%">
+										<form action="${cpath}/Login.do" method="post">
+											<input type="text" name="userId" class="text-field"
+												placeholder="아이디"> <input type="password"
+												name="userPwd" class="text-field" placeholder="비밀번호">
+											<input type="submit" value="로그인" class="submit-btn">
+										</form>
+										<div class="links">
+											<a href="#">비밀번호를 잊어버리셨나요?</a>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<!-- modal 끝 -->
-						</c:if>
-						<c:if test="${userVO!=null}">
-						<button id="loginBtn" class="btn btn-danger">로그아웃</button>
-						</c:if>
-					</li>
+							<!-- modal 끝 -->
+							<li><button id="joinBtn" class="btn btn-info"
+									style="margin-left: 5%" onClick="location.href='join'">회원가입</button></li>
+						</c:if> <c:if test="${userVO!=null}">
+							<button id="loginBtn" class="btn btn-danger">로그아웃</button>
+						</c:if></li>
 				</ul>
 			</div>
 		</div>

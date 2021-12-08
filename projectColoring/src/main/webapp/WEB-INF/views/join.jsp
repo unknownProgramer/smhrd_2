@@ -77,14 +77,5 @@ function checkBtn(){
 			<button type="button" class="submit-btn" onclick="checkBtn()">가입</button>
 		</form>
 	</div>
-	<!-- Large modal -->
-	<button type="button" class="btn btn-primary" data-toggle="modal"
-		data-target=".bs-example-modal-lg">Large modal</button>
-	<div class="modal fade" tabindex="-1" role="dialog"
-		aria-labelledby="myLargeModalLabel">
-		<div class="modal-dialog modal-lg" role="document">
-			<div class="modal-content">...</div>
-		</div>
-	</div>
 </body>
 </html>

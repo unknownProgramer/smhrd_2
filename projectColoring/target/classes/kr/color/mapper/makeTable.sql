@@ -6,7 +6,7 @@ INSERT INTO userInfo (user_id, user_pwd, user_name, user_email, user_phone, user
 INSERT INTO userInfo (user_id, user_pwd, user_name, user_email, user_phone, user_joindate, admin_yn) VALUES ('userId05', '1234', '양준현', 'user_email 5', '010-2910-2784', NOW(), 'N');
 
 use color;
-select * from userInfo;
+select * from userInfo where user_id='userId01' and user_pwd='1234'
 
 -- userInfo table 생성 --
 CREATE TABLE userInfo

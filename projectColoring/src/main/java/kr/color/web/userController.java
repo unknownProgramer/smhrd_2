@@ -33,13 +33,22 @@ public class userController {
 	}
 	
 	//로그인
-	@PostMapping("/login.do")
-	public String login(UserInfo getVO, HttpSession session) {
-		UserInfo userVO=mapper.login(getVO);
+	@RequestMapping("/Login.do")
+	public String login(UserInfo vo, HttpSession session) {
+		UserInfo userVO=mapper.login(vo);
 		if(userVO!=null) {
+			System.out.println("로그인 성공");
 			session.setAttribute("userVO", userVO);
+		}else {
+			System.out.println("로그인 실패");
 		}
 		return "main";
 	}
 	
+	//로그아웃
+	@RequestMapping("/Logout.do")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "main";
+	}
 }

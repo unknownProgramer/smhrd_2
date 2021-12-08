@@ -9,7 +9,8 @@
 	</insert>
 	
 	<select id="login" parameterType="kr.color.domain.UserInfo" resultType="kr.color.domain.UserInfo">
-	    select * from userInfo where userId=#{userId} and userPwd=#{userPwd}
+	    use color;
+	    select * from userInfo where user_id=#{userId} and user_pwd=#{userPwd};
 	</select>
 	
 </mapper>
