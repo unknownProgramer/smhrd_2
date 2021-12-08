@@ -35,16 +35,103 @@
 	background-size: cover;
 	background-position: center center;
 }
-
-.effect-bubba {
-	width: 20%;
-	height: 20%;
+/* 툴팁 기본 스타일 설정 시작 */
+.colorDiv {
+	position: relative;
+	display: block;
 }
+
+.colorDiv .tooltiptext {
+	visibility: hidden;
+	width: 120px;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
+	position: absolute;
+	z-index: 1;
+}
+
+.colorDiv:hover .tooltiptext {
+	visibility: visible;
+}
+/* 툴팁 기본 스타일 설정 끝 */
+
+/* 툴팁 화살표 기본 스타일 설정 시작 */
+.colorDiv .tooltiptext::after {
+	content: " ";
+	position: absolute;
+	border-style: solid;
+	border-width: 5px;
+}
+/* 툴팁 화살표 기본 스타일 설정 끝 */
+
+/* 왼쪽 툴팁 시작 */
+.colorDiv .tooltip-left {
+	top: -5px;
+	right: 105%;
+}
+
+.colorDiv .tooltip-left::after {
+	top: 50%;
+	left: 100%;
+	margin-top: -5px;
+	border-color: transparent transparent transparent black;
+}
+/* 왼쪽 툴팁 끝 */
+
+/* 오른쪽 툴팁 시작 */
+.colorDiv .tooltip-right {
+	top: -5px;
+	left: 105%;
+}
+
+.colorDiv .tooltip-right::after {
+	top: 50%;
+	right: 100%;
+	margin-top: -5px;
+	border-color: transparent black transparent transparent;
+}
+/* 오른쪽 툴팁 끝 */
+
+/* 위쪽 툴팁 시작 */
+.colorDiv .tooltip-top {
+	width: 120px;
+	bottom: 150%;
+	left: 50%;
+	margin-left: -60px;
+}
+
+.colorDiv .tooltip-top::after {
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-color: black transparent transparent transparent;
+}
+/* 위쪽 툴팁 끝 */
+
+/* 아래쪽 툴팁 시작 */
+.colorDiv .tooltip-bottom {
+	width: 120px;
+	top: 150%;
+	left: 50%;
+	margin-left: -60px;
+}
+
+.colorDiv .tooltip-bottom::after {
+	bottom: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-color: transparent transparent black transparent;
+}
+/* 아래쪽 툴팁 끝 */
 </style>
 <!-- Style 끝 -->
 
 </head>
 <body id="page-top">
+	<!-- 상단 로그인, 로그아웃 바 시작 -->
 	<nav class="navbar navbar-default" style="padding-top: 0%">
 		<div class="container">
 			<div class="navbar-header page-scroll">
@@ -63,7 +150,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li class="hidden"><a href="#page-top"></a></li>
 					<c:if test="${userVO==null}">
-					<li>
+						<li>
 							<!-- modal 시작 -->
 							<button id="loginBtn" class="btn btn-info">로그인</button>
 							<div class="modal fade" id="loginModal" tabindex="-1"
@@ -82,19 +169,24 @@
 										</div>
 									</div>
 								</div>
-							</div>
-							<!-- modal 끝 -->
-							</li>
-							<li><button id="joinBtn" class="btn btn-info"
-									style="margin-left: 5%" onClick="location.href='join'">회원가입</button></li>
-						</c:if> <c:if test="${userVO!=null}">
-							<li style="font-size: 16px; margin-top:3%">${userVO.getUser_name()}님, 환영합니다.</li>
-							<li><button id="loginBtn" class="btn btn-danger" onClick="location.href='Logout.do'" style="margin-left:10%">로그아웃</button></li>
-						</c:if>
+							</div> <!-- modal 끝 -->
+						</li>
+						<li><button id="joinBtn" class="btn btn-info"
+								style="margin-left: 5%" onClick="location.href='join'">회원가입</button></li>
+					</c:if>
+					<c:if test="${userVO!=null}">
+						<li style="font-size: 16px; margin-top: 3%">${userVO.getUser_name()}님,
+							환영합니다.</li>
+						<li><button id="loginBtn" class="btn btn-danger"
+								onClick="location.href='Logout.do'" style="margin-left: 10%">로그아웃</button></li>
+					</c:if>
 				</ul>
 			</div>
 		</div>
 	</nav>
+	<!-- 상단 로그인, 로그아웃 바 끝 -->
+
+
 
 	<section id="portfolio">
 		<div class="container">
@@ -104,55 +196,125 @@
 						<h2 class="dye">
 							<b>Describe Your Emotions</b>
 						</h2>
-						<button type="button" class="btn btn-secondary"
-							style="margin-top: 50px;">
-							<a class="page-scroll" href="#about">START</a>
-						</button>
 						<div class="color">
 							<ul class="bycolor">
 								<li>
-									<div style="background-color: #ff2000;"></div>
+									<div class="colorDiv" id="red"
+										style="background-color: #ff2000; cursor: pointer;">
+										<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
+									</div>
 								</li>
 								<li>
-									<div style="background-color: #ff7c00;"></div>
+									<div class="colorDiv" id="orange"
+										style="background-color: #ff7c00; cursor: pointer;">
+										<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
+									</div>
 								</li>
 								<li>
-									<div style="background-color: #f52394;"></div>
+									<div class="colorDiv" id="hotpink"
+										style="background-color: #f52394; cursor: pointer;">
+										<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
+									</div>
 								</li>
 								<li>
-									<div style="background-color: purple;"></div>
+									<div class="colorDiv" id="purple"
+										style="background-color: purple; cursor: pointer;">
+										<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
+									</div>
 								</li>
 								<li>
-									<div style="background-color: blue;"></div>
+									<div class="colorDiv" id="blue"
+										style="background-color: blue; cursor: pointer;">
+										<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
+									</div>
 								</li>
 								<li>
-									<div style="background-color: #00b2d4;"></div>
+									<div class="colorDiv" id="sky"
+										style="background-color: #00b2d4; cursor: pointer;">
+										<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
+									</div>
 								</li>
 								<li>
-									<div style="background-color: #00ab00;"></div>
+									<div class="colorDiv" id="green"
+										style="background-color: #00ab00; cursor: pointer;">
+										<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
+									</div>
 								</li>
 								<li>
-									<div style="background-color: #90e200;"></div>
+									<div class="colorDiv" id="greenyellow"
+										style="background-color: #90e200; cursor: pointer;">
+										<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
+									</div>
 								</li>
 								<li>
-									<div style="background-color: #ffcf00;"></div>
+									<div class="colorDiv" id="yellow"
+										style="background-color: #ffcf00; cursor: pointer;">
+										<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
+									</div>
 								</li>
 								<li>
-									<div style="background-color: #7f00ff;"></div>
+									<div class="colorDiv" id="violet"
+										style="background-color: #7f00ff; cursor: pointer;">
+										<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
+									</div>
 								</li>
 								<li>
-									<div style="background-color: #c4c4c4;"></div>
+									<div class="colorDiv" id="gray"
+										style="background-color: #c4c4c4; cursor: pointer;">
+										<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
+									</div>
 								</li>
 								<li>
-									<div style="background-color: #593110;"></div>
+									<div class="colorDiv" id="brown"
+										style="background-color: #593111; cursor: pointer;">
+										<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
+									</div>
 								</li>
+								<li>
+									<div class="colorDiv" id="white"
+										style="background-color: #fffff; border: 1px solid black; cursor: pointer;">
+										<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
+									</div>
+								</li>
+
 							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<div class="palettes_list">
+			<!-- 텍스트 입력부 시작 -->
+			<section id="about" class="mz-module">
+				<div class="container light-bg">
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<div class="section-title">
+								<h2>FOUND YOUR COLOR</h2>
+							</div>
+						</div>
+					</div>
+					<form onsubmit="return false">
+						<div class="input-group" style="margin: 0% 20% 0% 20%;">
+							<input onkeypress="if( event.keyCode==13 ){sendInput();}"
+								id="inputText" type="text" class="form-control"
+								placeholder="Search" style="height: 40px;">
+							<div class="input-group-btn">
+								<button onclick="sendInput()" class="btn btn-default"
+									type="button" id="searchColorBtn"
+									style="border: 1px solid #C0C0C0; height: 40px">
+									<i class="glyphicon glyphicon-search"></i>
+								</button>
+							</div>
+						</div>
+					</form>
+					<div class="palettes_list" style="margin-top: 0%;">
+						<ul id="palettes_result" class="palettes">
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<div class="palettes_list" style="margin-top: 0%">
 				<ul class="palettes">
 					<c:forEach var="vo" items="${list}">
 						<li><a>
@@ -168,37 +330,7 @@
 		</div>
 	</section>
 
-	<!-- </section> -->
-	<section id="about" class="mz-module">
-		<div class="container light-bg">
-			<div class="row">
-				<div class="col-lg-12 text-center">
-					<div class="section-title">
-						<h2>START</h2>
-					</div>
-				</div>
-			</div>
 
-			<form onsubmit="return false">
-				<div class="input-group" style="margin: 0% 20% 0% 20%;">
-					<input onkeypress="if( event.keyCode==13 ){sendInput();}"
-						id="inputText" type="text" class="form-control"
-						placeholder="Search" style="height: 40px;">
-					<div class="input-group-btn">
-						<button onclick="sendInput()" class="btn btn-default"
-							type="button">
-							<i class="glyphicon glyphicon-search"></i>
-						</button>
-					</div>
-				</div>
-			</form>
-
-			<div class="palettes_list" style="margin-top: 0%;">
-				<ul id="palettes_result" class="palettes">
-				</ul>
-			</div>
-		</div>
-	</section>
 	<!-- Modal for portfolio item 1 -->
 	<div class="modal fade" id="Modal-1" tabindex="-1" role="dialog"
 		aria-labelledby="Modal-label-1">
@@ -378,7 +510,16 @@
 		}
 		$('#loginBtn').click(function(e) {
 			e.preventDefault();
-			$('#loginModal').modal("show");
+			$('#loginModal').modal('show');
+		});
+
+		$(".colorDiv").click(function() {
+			$('#inputText').val(this.id);
+			$('#searchColorBtn').click();
+		});
+
+		$(document).ready(function() {
+			$(".colorDiv").tooltip();
 		});
 	</script>
 </body>

@@ -5,9 +5,13 @@ INSERT INTO userInfo (user_id, user_pwd, user_name, user_email, user_phone, user
 INSERT INTO userInfo (user_id, user_pwd, user_name, user_email, user_phone, user_joindate, admin_yn) VALUES ('userId04', '1234', '박지현', 'user_email 4', '010-7143-5797', NOW(), 'N');
 INSERT INTO userInfo (user_id, user_pwd, user_name, user_email, user_phone, user_joindate, admin_yn) VALUES ('userId05', '1234', '양준현', 'user_email 5', '010-2910-2784', NOW(), 'N');
 
-use color;
+
 select * from userInfo where user_id='userId01' and user_pwd='1234'
 
+
+delete from userInfo where user_id='userId05'
+use color;
+select * from userInfo
 -- userInfo table 생성 --
 CREATE TABLE userInfo
 (
@@ -21,3 +25,6 @@ CREATE TABLE userInfo
     `user_seq`       INT UNSIGNED    NOT NULL    AUTO_INCREMENT COMMENT '사용자 순번', 
      PRIMARY KEY (user_seq)
 );
+
+use color;
+select 'admin', count('admin') from userInfo having count(user_id);
