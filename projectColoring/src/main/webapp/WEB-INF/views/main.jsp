@@ -4,6 +4,19 @@
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="en">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="${cpath}/resources/js/theme-scripts.js"></script>
+<link rel="stylesheet" href="${cpath}/resources/css/style.css" />
+<link rel="stylesheet" href="${cpath}/resources/css/style1.css" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,16 +26,7 @@
 <link rel="icon" href="favicon.ico">
 <title>Coloring Bootstrap HTML</title>
 
-<!-- Bootstrap core CSS -->
-<link href="${cpath}/resources/css/bootstrap.min.css" rel="stylesheet">
-<link href="${cpath}/resources/css/bootstrap.css" rel="stylesheet">
-
-<!-- Custom core CSS -->
-<link href="${cpath}/resources/css/style.css" rel="stylesheet">
-<link rel="stylesheet" href="${cpath}/resources/css/style1.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
+<!-- Style 시작 -->
 <style>
 #logo {
 	height: 50px;
@@ -37,12 +41,12 @@
 	height: 20%;
 }
 </style>
+<!-- Style 끝 -->
+
 </head>
 <body id="page-top">
-	<!-- Navigation -->
-	<nav class="navbar navbar-default">
+	<nav class="navbar navbar-default" style="padding-top:0%">
 		<div class="container">
-			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header page-scroll">
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
 					data-target="#bs-example-navbar-collapse-1">
@@ -54,32 +58,41 @@
 					id="logo" src="${cpath}/resources/images/coloringLogo_small.png"
 					alt="Treviso theme logo"></a>
 			</div>
-			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
-				id="bs-example-navbar-collapse-1">
+				id="bs-example-navbar-collapse-1" style="padding-top:0.6%">
 				<ul class="nav navbar-nav navbar-right">
 					<li class="hidden"><a href="#page-top"></a></li>
-					<li><a class="page-scroll" href="#about">Start</a></li>
-					<li><a class="page-scroll" href="#contact">Login</a></li>
+					<li>
+						<c:if test="${userVO==null}">
+						<!-- modal 시작 -->
+						<button id="loginBtn" class="btn btn-info">로그인</button>
+						<div class="modal fade" id="loginModal" tabindex="-1"
+							role="dialog" aria-labelledby="exampleModalLabel"
+							aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="login-form" style="margin-bottom: 10%">
+									<form>
+										<input type="text" name="email" class="text-field"
+											placeholder="아이디"> <input type="password"
+											name="password" class="text-field" placeholder="비밀번호">
+										<input type="submit" value="로그인" class="submit-btn">
+									</form>
+									<div class="links">
+										<a href="#">비밀번호를 잊어버리셨나요?</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- modal 끝 -->
+						</c:if>
+						<c:if test="${userVO!=null}">
+						<button id="loginBtn" class="btn btn-danger">로그아웃</button>
+						</c:if>
+					</li>
 				</ul>
 			</div>
-			<!-- /.navbar-collapse -->
 		</div>
-		<!-- /.container-fluid -->
 	</nav>
-
-	<!-- modal 시작 -->
-	<button type="button" class="btn btn-primary" data-toggle="modal"
-		data-target=".bs-example-modal-lg">Large modal</button>
-
-	<div class="modal fade" tabindex="-1" role="dialog"
-		aria-labelledby="myLargeModalLabel">
-		<div class="modal-dialog modal-lg" role="document">
-			<div class="modal-content">...</div>
-		</div>
-	</div>
-
-	<!-- modal 끝 -->
 
 	<section id="portfolio">
 		<div class="container">
@@ -153,7 +166,6 @@
 		</div>
 	</section>
 
-
 	<!-- </section> -->
 	<section id="about" class="mz-module">
 		<div class="container light-bg">
@@ -167,7 +179,8 @@
 
 			<form onsubmit="return false">
 				<div class="input-group" style="margin: 0% 20% 0% 20%;">
-					<input onkeypress="if( event.keyCode==13 ){sendInput();}" id="inputText" type="text" class="form-control"
+					<input onkeypress="if( event.keyCode==13 ){sendInput();}"
+						id="inputText" type="text" class="form-control"
 						placeholder="Search" style="height: 40px;">
 					<div class="input-group-btn">
 						<button onclick="sendInput()" class="btn btn-default"
@@ -324,14 +337,7 @@
 		</div>
 	</div>
 
-	<!-- Bootstrap core JavaScript
-			================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="${cpath}resources/js/bootstrap.min.js"></script>
-	<script src="${cpath}resources/js/SmoothScroll.js"></script>
-	<script src="${cpath}resources/js/theme-scripts.js"></script>
+	<!-- Bootstrap core JavaScript-->
 	<script type="text/javascript">
 		function sendInput() {
 			var inputText = $("#inputText").val();
@@ -368,29 +374,9 @@
 						.fadeIn();
 			}
 		}
-	</script>
-	<script>
-		// 모달 버튼에 이벤트를 건다.
-		$('#openModalBtn').on('click', function() {
-			$('#modalBox').modal('show');
-			console.log("click open");
-		});
-		// 모달 안의 취소 버튼에 이벤트를 건다.
-		$('#closeModalBtn').on('click', function() {
-			$('#modalBox').modal('hide');
-			console.log("click close");
-		});
-		$('#modalBox').on('show.bs.modal', function(e) {
-			console.log("show.bs.modal");
-		});
-		$('#modalBox').on('shown.bs.modal', function(e) {
-			console.log("shown.bs.modal");
-		});
-		$('#modalBox').on('hide.bs.modal', function(e) {
-			console.log("hide.bs.modal");
-		});
-		$('#modalBox').on('hidden.bs.modal', function(e) {
-			console.log("hidden.bs.modal");
+		$('#loginBtn').click(function(e) {
+			e.preventDefault();
+			$('#loginModal').modal("show");
 		});
 	</script>
 </body>
