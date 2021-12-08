@@ -5,7 +5,7 @@
 	<insert id="register" parameterType="kr.color.domain.UserInfo">
 		insert into 
 		userInfo(user_id,user_pwd,user_name,user_email,user_phone,admin_yn)
-		values(#{userId},#{userPwd},#{userName},#{userEmail},#{userPhone},"N")
+		values(#{user_id},#{user_pwd},#{user_name},#{user_email},#{user_phone},"N")
 	</insert>
 	
 	<select id="login" parameterType="kr.color.domain.UserInfo" resultType="kr.color.domain.UserInfo">

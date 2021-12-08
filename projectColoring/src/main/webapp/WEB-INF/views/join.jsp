@@ -19,41 +19,37 @@
 </head>
 <script type="text/javascript">
 function checkBtn(){
-	var userEmail=$("#userEmail").val();
-    if(userEmail==""){
+	var user_email=$("#user_email").val();
+    if(user_email==""){
        alert("이메일은 필수 입력사항입니다.");
-       $("#userEmail").focus();
+       $("#user_email").focus();
        return false;
     }
-    var userId=$("#userId").val();
-    if(userId==""){
+    var user_id=$("#user_id").val();
+    if(user_id==""){
        alert("아이디는 필수 입력사항입니다.");
-       $("#userId").focus();
+       $("#user_id").focus();
        return false;
     }
-    var userPwd=$("#userPwd").val();
-    if(userPwd==""){
+    var user_pwd=$("#user_pwd").val();
+    if(user_pwd==""){
        alert("비밀번호는 필수 입력사항입니다.");
-       $("#userPwd").focus();
+       $("#user_pwd").focus();
        return false;
     }
-    var userName=$("#userName").val();
-    if(userName==""){
+    var user_name=$("#user_name").val();
+    if(user_name==""){
        alert("이름은 필수 입력사항입니다.");
-       $("#userName").focus();
+       $("#user_name").focus();
        return false;
     }
-    var userPhone=$("#userPhone").val();
-    if(userPhone==""){
+    var user_phone=$("#user_phone").val();
+    if(user_phone==""){
        alert("전화번호는 필수 입력사항입니다.");
-       $("#userPhone").focus();
+       $("#user_phone").focus();
        return false;
     }
      $("#frm").submit();
-     
-     $('#myModal').on('shown.bs.modal', function () {
-    	  $('#myInput').focus()
-    	})
      
 }
 </script>
@@ -66,14 +62,14 @@ function checkBtn(){
 					src="${cpath}/resources//images/coloringLogo_small.png"
 					style="width: 50%; height: 50%;">
 			</div>
-			<input type="text" name="userEmail" class="text-field"
-				placeholder="Email" id="userEmail"> <input type="text"
-				name="userId" class="text-field" placeholder="아이디" id="userId">
-			<input type="password" name="userPwd" class="text-field"
-				placeholder="비밀번호" id="userPwd"> <input type="text"
-				name="userName" class="text-field" placeholder="이름" id="userName">
-			<input type="text" name="userPhone" class="text-field"
-				placeholder="핸드폰번호" id="userPhone">
+			<input type="text" name="user_email" class="text-field"
+				placeholder="Email" id="user_email"> <input type="text"
+				name="user_id" class="text-field" placeholder="아이디" id="user_id">
+			<input type="password" name="user_pwd" class="text-field"
+				placeholder="비밀번호" id="user_pwd"> <input type="text"
+				name="user_name" class="text-field" placeholder="이름" id="user_name">
+			<input type="text" name="user_phone" class="text-field"
+				placeholder="핸드폰번호" id="user_phone">
 			<button type="button" class="submit-btn" onclick="checkBtn()">가입</button>
 		</form>
 	</div>

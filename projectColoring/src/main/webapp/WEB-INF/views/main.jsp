@@ -62,7 +62,8 @@
 				id="bs-example-navbar-collapse-1" style="padding-top: 0.6%">
 				<ul class="nav navbar-nav navbar-right">
 					<li class="hidden"><a href="#page-top"></a></li>
-					<li><c:if test="${userVO==null}">
+					<c:if test="${userVO==null}">
+					<li>
 							<!-- modal 시작 -->
 							<button id="loginBtn" class="btn btn-info">로그인</button>
 							<div class="modal fade" id="loginModal" tabindex="-1"
@@ -83,12 +84,13 @@
 								</div>
 							</div>
 							<!-- modal 끝 -->
+							</li>
 							<li><button id="joinBtn" class="btn btn-info"
 									style="margin-left: 5%" onClick="location.href='join'">회원가입</button></li>
 						</c:if> <c:if test="${userVO!=null}">
-						<a>${userVO.getUser_name()}</a>
-							<button id="loginBtn" class="btn btn-danger" onClick="location.href='Logout.do'">로그아웃</button>
-						</c:if></li>
+							<li style="font-size: 16px; margin-top:3%">${userVO.getUser_name()}님, 환영합니다.</li>
+							<li><button id="loginBtn" class="btn btn-danger" onClick="location.href='Logout.do'" style="margin-left:10%">로그아웃</button></li>
+						</c:if>
 				</ul>
 			</div>
 		</div>
