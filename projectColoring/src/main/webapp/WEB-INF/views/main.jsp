@@ -86,7 +86,8 @@
 							<li><button id="joinBtn" class="btn btn-info"
 									style="margin-left: 5%" onClick="location.href='join'">회원가입</button></li>
 						</c:if> <c:if test="${userVO!=null}">
-							<button id="loginBtn" class="btn btn-danger">로그아웃</button>
+						<a>${userVO.getUser_name()}</a>
+							<button id="loginBtn" class="btn btn-danger" onClick="location.href='Logout.do'">로그아웃</button>
 						</c:if></li>
 				</ul>
 			</div>

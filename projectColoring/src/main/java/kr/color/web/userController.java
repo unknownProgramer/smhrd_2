@@ -44,13 +44,13 @@ public class userController {
 		}else {
 			System.out.println("로그인 실패");
 		}
-		return "main";
+		return "redirect:/";
 	}
 	
 	//로그아웃
 	@RequestMapping("/Logout.do")
 	public String logout(HttpSession session) {
 		session.invalidate();
-		return "main";
+		return "redirect:/";
 	}
 }
