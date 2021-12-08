@@ -165,9 +165,9 @@
 				</div>
 			</div>
 
-			<form>
+			<form onsubmit="return false">
 				<div class="input-group" style="margin: 0% 20% 0% 20%;">
-					<input id="inputText" type="text" class="form-control"
+					<input onkeypress="if( event.keyCode==13 ){sendInput();}" id="inputText" type="text" class="form-control"
 						placeholder="Search" style="height: 40px;">
 					<div class="input-group-btn">
 						<button onclick="sendInput()" class="btn btn-default"
