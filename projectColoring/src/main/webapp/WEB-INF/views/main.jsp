@@ -188,8 +188,8 @@
 	<section id="portfolio">
 		<div class="container">
 			<!-- 텍스트 입력부 시작 -->
-			<section id="about" class="mz-module light-bg">
-				<div class="container">
+			<section id="about" class="mz-module">
+				<div class="light-bg">
 					<div class="row">
 						<div class="col-lg-12 text-center">
 							<div class="section-title">
@@ -283,7 +283,7 @@
 						</div>
 					</div>
 
-					<form onsubmit="return false" style="margin-top: 40px">
+					<form class="palette-search-form" onsubmit="return false" style="margin-top: 40px">
 						<div class="input-group" style="margin: 0% 20% 0% 20%;">
 							<input onkeypress="if( event.keyCode==13 ){sendInput();}"
 								id="inputText" type="text" class="form-control"
