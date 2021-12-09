@@ -27,13 +27,7 @@
 
 <!-- Style 시작 -->
 <style>
-#logo {
-	height: 36px;
-	width: 150px;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-}
+
 /* 툴팁 기본 스타일 설정 시작 */
 .colorDiv {
 	position: relative;

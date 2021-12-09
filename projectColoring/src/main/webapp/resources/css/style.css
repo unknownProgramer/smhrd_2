@@ -16,6 +16,14 @@ Import Google Fonts
 /*--------------------
 1. General
 --------------------*/
+#logo {
+	height: 36px;
+	width: 150px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	
+}
 
 body {
 	margin: 0px;
