@@ -16,12 +16,13 @@ public class userController {
 	@Autowired
 	userMapper mapper;
 	
+	// 회원가입
 	@RequestMapping("/join")
 	public String join() {
 		return "join";
 	}
 	
-	//회원가입 후 로그인
+	// 회원가입 후 로그인
 	@PostMapping("/register.do")
 	public String register(UserInfo vo, HttpSession session) {
 		mapper.register(vo);
@@ -32,7 +33,7 @@ public class userController {
 		return "redirect:/";
 	}
 	
-	//로그인
+	// 로그인
 	@RequestMapping("/Login.do")
 	public String login(UserInfo vo, HttpSession session) {
 		UserInfo userVO=mapper.login(vo);
@@ -44,10 +45,16 @@ public class userController {
 		return "redirect:/";
 	}
 	
-	//로그아웃
+	// 로그아웃
 	@RequestMapping("/Logout.do")
 	public String logout(HttpSession session) {
 		session.invalidate();
 		return "redirect:/";
+	}
+	
+	//마이페이지
+	@RequestMapping("/mypage")
+	public String mypage() {
+		return "mypage";
 	}
 }

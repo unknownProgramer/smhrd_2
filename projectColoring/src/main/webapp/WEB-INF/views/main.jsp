@@ -23,7 +23,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="icon" href="favicon.ico">
 <title>Coloring Bootstrap HTML</title>
 
 <!-- Style 시작 -->
@@ -151,8 +150,8 @@
 					<li class="hidden"><a href="#page-top"></a></li>
 					<c:if test="${userVO==null}">
 						<li>
-							<!-- modal 시작 -->
-							<button id="loginBtn" class="btn btn-info">로그인</button>
+							<!-- modal 시작 --> <a id="loginBtn" style="cursor: pointer;">LOG
+								IN</a>
 							<div class="modal fade" id="loginModal" tabindex="-1"
 								role="dialog" aria-labelledby="exampleModalLabel"
 								aria-hidden="true">
@@ -171,22 +170,24 @@
 								</div>
 							</div> <!-- modal 끝 -->
 						</li>
-						<li><button id="joinBtn" class="btn btn-info"
-								style="margin-left: 5%" onClick="location.href='join'">회원가입</button></li>
+						<li><a id="joinBtn" style="margin-left: 5%; cursor: pointer;"
+							onClick="location.href='join'">JOIN</a></li>
 					</c:if>
 					<c:if test="${userVO!=null}">
-						<li style="font-size: 16px; margin-top: 3%">${userVO.getUser_name()}님,
-							환영합니다.</li>
-						<li><button id="loginBtn" class="btn btn-danger"
-								onClick="location.href='Logout.do'" style="margin-left: 10%">로그아웃</button></li>
+						<li style="font-size: 16px; margin-top: 3%">Welcome,
+							${userVO.getUser_name()}.</li>
+						<li><a id="mypageBtn"
+							onClick="location.href='${cpath}/mypage'"
+							style="cursor: pointer;">MY PAGE</a></li>
+						<li><a id="logoutBtn" onClick="location.href='Logout.do'"
+							style="cursor: pointer;">LOG OUT</a></li>
+
 					</c:if>
 				</ul>
 			</div>
 		</div>
 	</nav>
 	<!-- 상단 로그인, 로그아웃 바 끝 -->
-
-
 
 	<section id="portfolio">
 		<div class="container">
@@ -289,7 +290,7 @@
 					<div class="row">
 						<div class="col-lg-12 text-center">
 							<div class="section-title">
-								<h2>FOUND YOUR COLOR</h2>
+								<h2>FIND YOUR COLORS</h2>
 							</div>
 						</div>
 					</div>
