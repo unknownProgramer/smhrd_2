@@ -208,7 +208,7 @@ th {
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand page-scroll" href="#page-top"> <img
+				<a class="navbar-brand page-scroll" href="${cpath}/"> <img
 					id="logo" src="${cpath}/resources/images/coloringLogo_small.png"
 					alt="Treviso theme logo"></a>
 			</div>
