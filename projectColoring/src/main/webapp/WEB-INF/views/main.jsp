@@ -27,13 +27,7 @@
 
 <!-- Style 시작 -->
 <style>
-#logo {
-	height: 50px;
-	width: 230px;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-}
+
 /* 툴팁 기본 스타일 설정 시작 */
 .colorDiv {
 	position: relative;
@@ -194,110 +188,103 @@
 
 	<section id="portfolio">
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-12 text-center">
-					<div class="section-title">
-						<h2 class="dye">
-							<b>Describe Your Emotions</b>
-						</h2>
-						<div class="color">
-							<ul class="bycolor">
-								<li>
-									<div class="colorDiv" id="red"
-										style="background-color: #ff2000; cursor: pointer;">
-										<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
-									</div>
-								</li>
-								<li>
-									<div class="colorDiv" id="orange"
-										style="background-color: #ff7c00; cursor: pointer;">
-										<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
-									</div>
-								</li>
-								<li>
-									<div class="colorDiv" id="hotpink"
-										style="background-color: #f52394; cursor: pointer;">
-										<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
-									</div>
-								</li>
-								<li>
-									<div class="colorDiv" id="purple"
-										style="background-color: purple; cursor: pointer;">
-										<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
-									</div>
-								</li>
-								<li>
-									<div class="colorDiv" id="blue"
-										style="background-color: blue; cursor: pointer;">
-										<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
-									</div>
-								</li>
-								<li>
-									<div class="colorDiv" id="sky"
-										style="background-color: #00b2d4; cursor: pointer;">
-										<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
-									</div>
-								</li>
-								<li>
-									<div class="colorDiv" id="green"
-										style="background-color: #00ab00; cursor: pointer;">
-										<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
-									</div>
-								</li>
-								<li>
-									<div class="colorDiv" id="greenyellow"
-										style="background-color: #90e200; cursor: pointer;">
-										<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
-									</div>
-								</li>
-								<li>
-									<div class="colorDiv" id="yellow"
-										style="background-color: #ffcf00; cursor: pointer;">
-										<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
-									</div>
-								</li>
-								<li>
-									<div class="colorDiv" id="violet"
-										style="background-color: #7f00ff; cursor: pointer;">
-										<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
-									</div>
-								</li>
-								<li>
-									<div class="colorDiv" id="gray"
-										style="background-color: #c4c4c4; cursor: pointer;">
-										<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
-									</div>
-								</li>
-								<li>
-									<div class="colorDiv" id="brown"
-										style="background-color: #593111; cursor: pointer;">
-										<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
-									</div>
-								</li>
-								<li>
-									<div class="colorDiv" id="white"
-										style="background-color: #fffff; border: 1px solid black; cursor: pointer;">
-										<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
-									</div>
-								</li>
-
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-
 			<!-- 텍스트 입력부 시작 -->
 			<section id="about" class="mz-module">
 				<div class="container light-bg">
 					<div class="row">
 						<div class="col-lg-12 text-center">
 							<div class="section-title">
-								<h2>FIND YOUR COLORS</h2>
+								<h2 class="dye">
+									<b>Describe Your Emotions</b>
+								</h2>
+							</div>
+							<div class="color">
+								<ul class="bycolor">
+									<li>
+										<div class="colorDiv" id="red"
+											style="background-color: #ff2000; cursor: pointer;">
+											<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
+										</div>
+									</li>
+									<li>
+										<div class="colorDiv" id="orange"
+											style="background-color: #ff7c00; cursor: pointer;">
+											<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
+										</div>
+									</li>
+									<li>
+										<div class="colorDiv" id="hotpink"
+											style="background-color: #f52394; cursor: pointer;">
+											<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
+										</div>
+									</li>
+									<li>
+										<div class="colorDiv" id="purple"
+											style="background-color: purple; cursor: pointer;">
+											<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
+										</div>
+									</li>
+									<li>
+										<div class="colorDiv" id="blue"
+											style="background-color: blue; cursor: pointer;">
+											<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
+										</div>
+									</li>
+									<li>
+										<div class="colorDiv" id="sky"
+											style="background-color: #00b2d4; cursor: pointer;">
+											<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
+										</div>
+									</li>
+									<li>
+										<div class="colorDiv" id="green"
+											style="background-color: #00ab00; cursor: pointer;">
+											<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
+										</div>
+									</li>
+									<li>
+										<div class="colorDiv" id="greenyellow"
+											style="background-color: #90e200; cursor: pointer;">
+											<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
+										</div>
+									</li>
+									<li>
+										<div class="colorDiv" id="yellow"
+											style="background-color: #ffcf00; cursor: pointer;">
+											<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
+										</div>
+									</li>
+									<li>
+										<div class="colorDiv" id="violet"
+											style="background-color: #7f00ff; cursor: pointer;">
+											<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
+										</div>
+									</li>
+									<li>
+										<div class="colorDiv" id="gray"
+											style="background-color: #c4c4c4; cursor: pointer;">
+											<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
+										</div>
+									</li>
+									<li>
+										<div class="colorDiv" id="brown"
+											style="background-color: #593111; cursor: pointer;">
+											<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
+										</div>
+									</li>
+									<li>
+										<div class="colorDiv" id="white"
+											style="background-color: white; border: 1px solid black; cursor: pointer;">
+											<span class="tooltiptext tooltip-bottom">툴팁 테스트</span>
+										</div>
+									</li>
+
+								</ul>
 							</div>
 						</div>
 					</div>
-					<form onsubmit="return false">
+
+					<form onsubmit="return false" style="margin-top: 40px">
 						<div class="input-group" style="margin: 0% 20% 0% 20%;">
 							<input onkeypress="if( event.keyCode==13 ){sendInput();}"
 								id="inputText" type="text" class="form-control"

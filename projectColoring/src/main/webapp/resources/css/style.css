@@ -16,6 +16,14 @@ Import Google Fonts
 /*--------------------
 1. General
 --------------------*/
+#logo {
+	height: 36px;
+	width: 150px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	
+}
 
 body {
 	margin: 0px;
@@ -149,7 +157,8 @@ section {
     	-webkit-transition:padding .3s;
 		-moz-transition:padding .3s;
 		transition:padding .3s;
-		border:0
+		border:0;
+		margin-top: 15px;
 	}
 	.navbar-default .navbar-brand {
 		font-size: 2em;
@@ -184,8 +193,6 @@ section {
         width: 600px;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 40px;
-
     }
 
     .color-palettes-list>color-box{
@@ -246,7 +253,7 @@ section {
 }
 
 .mz-module .section-title {
-    padding: 40px 0;
+    padding: 20px 0;
 }
 
 .palettes_list{
