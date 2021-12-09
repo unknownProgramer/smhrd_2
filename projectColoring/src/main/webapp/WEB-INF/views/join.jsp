@@ -15,7 +15,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<title>coloring : 회원가입</title>
+<title>Coloring - Describe Your Emotions</title>
 </head>
 <script type="text/javascript">
 function checkBtn(){

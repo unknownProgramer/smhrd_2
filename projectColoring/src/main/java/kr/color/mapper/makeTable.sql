@@ -27,4 +27,4 @@ CREATE TABLE userInfo
 );
 
 use color;
-select 'admin', count('admin') from userInfo having count(user_id);
+select * from paintmanagement;

@@ -23,7 +23,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Coloring Bootstrap HTML</title>
+<title>Coloring - Describe Your Emotions</title>
 
 <!-- Style 시작 -->
 <style>
@@ -157,15 +157,18 @@
 								aria-hidden="true">
 								<div class="modal-dialog" role="document">
 									<div class="login-form" style="margin-bottom: 10%">
+									<div style="text-align: center; margin-bottom: 10%;">
+										<img src="${cpath}/resources/images/colorLogo.png"
+											style="width: 50%; height: 50%;"> <img
+											src="${cpath}/resources//images/coloringLogo_small.png"
+											style="width: 50%; height: 50%;">
+									</div>
 										<form action="${cpath}/Login.do" method="post">
 											<input type="text" name="user_id" class="text-field"
 												placeholder="아이디"> <input type="password"
 												name="user_pwd" class="text-field" placeholder="비밀번호">
 											<input type="submit" value="로그인" class="submit-btn">
 										</form>
-										<div class="links">
-											<a href="#">비밀번호를 잊어버리셨나요?</a>
-										</div>
 									</div>
 								</div>
 							</div> <!-- modal 끝 -->

@@ -23,7 +23,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>COLORING</title>
+<title>Coloring - Describe Your Emotions</title>
 
 <!-- Style 시작 -->
 <style>
@@ -124,13 +124,87 @@
 	margin-left: -5px;
 	border-color: transparent transparent black transparent;
 }
+
+<
+style>#logo {
+	height: 36px;
+	width: 150px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+
+.effect-bubba {
+	width: 20%;
+	height: 20%;
+}
+
+.save_icon {
+	text-align: right;
+}
+
+.palettes_list {
+	/* background-color: rgb(254,209,54); */
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.myinfo {
+	margin-top: 20px;
+	padding: 10px 0 12px;
+	background-color: #f6f6f6;
+	border-top: 1px dotted #e3e3e3;
+	border-bottom: 1px dotted #e3e3e3;
+	text-align: center;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	table-layout: fixed;
+	word-wrap: break-word;
+	word-break: keep-all;
+}
+
+tr {
+	display: table-row;
+	vertical-align: inherit;
+	border-color: inherit;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border: 1px dotted #e3e3e3;
+	font-weight: 500;
+}
+
+td {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border: 1px dotted #e3e3e3;
+	font-weight: 500;
+}
+
+th {
+	text-align: center;
+}
+
+.myinfo_table {
+	height: 40%;
+	width: 40%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1%;
+}
 /* 아래쪽 툴팁 끝 */
 </style>
 <!-- Style 끝 -->
 
 </head>
 <body>
-<!-- 상단 로그인, 로그아웃 바 시작 -->
+	<!-- 상단 로그인, 로그아웃 바 시작 -->
 	<nav class="navbar navbar-default" style="padding-top: 0%">
 		<div class="container">
 			<div class="navbar-header page-scroll">
@@ -176,18 +250,83 @@
 					<c:if test="${userVO!=null}">
 						<li style="font-size: 16px; margin-top: 3%">Welcome,
 							${userVO.getUser_name()}.</li>
-						<li><a id="mypageBtn"
-							onClick="location.href='${cpath}/mypage'"
-							style="cursor: pointer;">MY PAGE</a></li>
+						<li><a id="mypageBtn" onClick="location.href='${cpath}/'"
+							style="cursor: pointer;">HOME</a></li>
 						<li><a id="logoutBtn" onClick="location.href='Logout.do'"
 							style="cursor: pointer;">LOG OUT</a></li>
-
 					</c:if>
 				</ul>
 			</div>
 		</div>
 	</nav>
 	<!-- 상단 로그인, 로그아웃 바 끝 -->
-
+	<section id="portfolio">
+		<!-- <div class="container"> -->
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<div class="section-title">
+					<h2 class="dye">
+						<b>User ID</b>
+					</h2>
+					<div class="myinfo_table">
+						<table cellspacing="0" cellpadding="0">
+							<tbody>
+								<tr>
+									<th>아이디</th>
+									<td>${userVO.getUser_id()}</td>
+								</tr>
+								<tr>
+									<th>이메일</th>
+									<td>${userVO.getUser_email()}</td>
+								</tr>
+								<tr>
+									<th>이름</th>
+									<td>${userVO.getUser_name()}</td>
+								</tr>
+								<tr>
+									<th>핸드폰번호</th>
+									<td>${userVO.getUser_phone()}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<h2>
+						<b>My Favorites</b>
+					</h2>
+					<a href="" title="Test Palette"></a>
+					<div class="palettes_list">
+						<ul class="palettes">
+							<li>
+								<div style="background-color: #00ab00;"></div>
+								<div style="background-color: #00b2d4;"></div>
+								<div style="background-color: #7f00ff;"></div>
+								<div style="background-color: #ffcf00;"></div>
+								<div style="background-color: #00b2d4;"></div> </a>
+							</li>
+							<li><a href="" title="Test Palette">
+									<div style="background-color: #00ab00;"></div>
+									<div style="background-color: #00b2d4;"></div>
+									<div style="background-color: #7f00ff;"></div>
+									<div style="background-color: #ffcf00;"></div>
+									<div style="background-color: #00b2d4;"></div>
+							</a></li>
+							<li><a href="" title="Test Palette">
+									<div style="background-color: #00ab00;"></div>
+									<div style="background-color: #00b2d4;"></div>
+									<div style="background-color: #7f00ff;"></div>
+									<div style="background-color: #ffcf00;"></div>
+									<div style="background-color: #00b2d4;"></div>
+							</a>
+								<div>
+									<span>스모크 그린</span> <img src="images/save.png"
+										style="height: 30px; float: right;">
+								</div></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- </div> -->
+	</section>
 </body>
 </html>
