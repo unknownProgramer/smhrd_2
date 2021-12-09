@@ -254,7 +254,6 @@ th {
 		</div>
 	</nav>
 	<!-- 상단 로그인, 로그아웃 바 끝 -->
-<<<<<<< HEAD
 	<section id="portfolio">
 		<!-- <div class="container"> -->
 		<div class="row">
@@ -323,71 +322,5 @@ th {
 		</div>
 		<!-- </div> -->
 	</section>
-=======
-
-	<!-- 바디 시작 -->
-	<section id="portfolio">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12 text-center">
-					<div class="section-title">
-						<h2 class="dye">
-							<b>User ID</b>
-						</h2>
-						<div
-							style="border-radius: 10px; background-color: whitesmoke; width: 1200px; height: 300px;">
-							<table>
-								<tr>
-									<td>이메일</td>
-									<td>김기연</td>
-								</tr>
-								<tr>
-									<td>이름</td>
-									<td>010-7583-4193</td>
-								</tr>
-							</table>
-						</div>
-						<hr style="border: solid 1px #C0C0C0; margin-top: 10%;">
-						<h2>
-							<b>My Favorites</b>
-						</h2>
-						<a href="" title="Test Palette"></a>
-						<div class="palettes_list">
-							<ul class="palettes">
-								<li>
-
-									<div style="background-color: #00ab00;"></div>
-									<div style="background-color: #00b2d4;"></div>
-									<div style="background-color: #7f00ff;"></div>
-									<div style="background-color: #ffcf00;"></div>
-									<div style="background-color: #00b2d4;"></div> </a>
-								</li>
-								<li><a href="" title="Test Palette">
-										<div style="background-color: #00ab00;"></div>
-										<div style="background-color: #00b2d4;"></div>
-										<div style="background-color: #7f00ff;"></div>
-										<div style="background-color: #ffcf00;"></div>
-										<div style="background-color: #00b2d4;"></div>
-								</a></li>
-								<li><a href="" title="Test Palette">
-										<div style="background-color: #00ab00;"></div>
-										<div style="background-color: #00b2d4;"></div>
-										<div style="background-color: #7f00ff;"></div>
-										<div style="background-color: #ffcf00;"></div>
-										<div style="background-color: #00b2d4;"></div>
-								</a>
-									<div>
-										<span>스모크 그린</span> <img src="images/save.png"
-											style="height: 30px; float: right;">
-									</div></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-2/color.git
 </body>
 </html>
