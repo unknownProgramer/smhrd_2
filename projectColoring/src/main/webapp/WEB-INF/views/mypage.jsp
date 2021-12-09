@@ -10,13 +10,10 @@
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="${cpath}/resources/css/style.css" />
-<link rel="stylesheet" href="${cpath}/resources/css/style1.css" />
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+<link rel="stylesheet" href="${cpath}/resources/css/style.css" />
+<link rel="stylesheet" href="${cpath}/resources/css/style1.css" />
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,9 +22,9 @@
 <meta name="author" content="">
 <title>Coloring - Describe Your Emotions</title>
 
+
 <!-- Style 시작 -->
 <style>
-
 /* 툴팁 기본 스타일 설정 시작 */
 .colorDiv {
 	position: relative;
@@ -260,7 +257,7 @@ th {
 			<div class="col-lg-12 text-center">
 				<div class="section-title">
 					<h2 class="dye">
-						<b>User ID</b>
+						<b>INFOMATION</b>
 					</h2>
 					<div class="myinfo_table">
 						<table cellspacing="0" cellpadding="0">
@@ -287,40 +284,54 @@ th {
 					<h2>
 						<b>My Favorites</b>
 					</h2>
-					<a href="" title="Test Palette"></a>
 					<div class="palettes_list">
-						<ul class="palettes">
-							<li>
-								<div style="background-color: #00ab00;"></div>
-								<div style="background-color: #00b2d4;"></div>
-								<div style="background-color: #7f00ff;"></div>
-								<div style="background-color: #ffcf00;"></div>
-								<div style="background-color: #00b2d4;"></div> </a>
-							</li>
-							<li><a href="" title="Test Palette">
-									<div style="background-color: #00ab00;"></div>
-									<div style="background-color: #00b2d4;"></div>
-									<div style="background-color: #7f00ff;"></div>
-									<div style="background-color: #ffcf00;"></div>
-									<div style="background-color: #00b2d4;"></div>
-							</a></li>
-							<li><a href="" title="Test Palette">
-									<div style="background-color: #00ab00;"></div>
-									<div style="background-color: #00b2d4;"></div>
-									<div style="background-color: #7f00ff;"></div>
-									<div style="background-color: #ffcf00;"></div>
-									<div style="background-color: #00b2d4;"></div>
-							</a>
-								<div>
-									<span>스모크 그린</span> <img src="images/save.png"
-										style="height: 30px; float: right;">
-								</div></li>
+						<ul id="palettes_result" class="palettes">
 						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- </div> -->
 	</section>
+
+	<!-- 팔레트 불러오기 시작 -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			loadPalettes();
+		});
+
+		function loadPalettes() {
+			var user_seq = ${userVO.user_seq}
+			$.ajax({
+				url : "${cpath}/getMyPalettes.do",
+				type : "GET",
+				data : {
+					"user_seq" : user_seq
+				},
+				dataType : "json",
+				success : showPalettes,
+				error : function() {
+					alert("error");
+				}
+			});
+		}
+
+		function showPalettes(data) {
+			console.log(data)
+			console.log(data[1])
+			for (let i=0; i<data.length; i++){
+				var view = "<li>";
+				view += "<a href='' title=''>";
+				view += "<div style='background-color: "+data[i].palette_color1+";'></div>";
+				view += "<div style='background-color: "+data[i].palette_color2+";'></div>";
+				view += "<div style='background-color: "+data[i].palette_color3+";'></div>";
+				view += "<div style='background-color: "+data[i].palette_color4+";'></div>";
+				view += "<div style='background-color: "+data[i].palette_color5+";'></div>";
+				view += "</a>";
+				view += "</li>";
+				$("#palettes_result").append(view);
+			}
+		}
+	</script>
+	<!-- 팔레트 불러오기 끝 -->
 </body>
 </html>

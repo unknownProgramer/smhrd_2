@@ -9,4 +9,8 @@
 	<select id="genPalette" resultType="kr.color.domain.Palettes">
 	    select p.palette_seq, t.txt_seq, p.palette_color1, p.palette_color2, p.palette_color3, p.palette_color4, p.palette_color5, p.regdit_date, p.user_seq from inputtext t, palettes p where t.txt_seq = p.txt_seq order by jaro_winkler_similarity(#{inputText}, t.txt_content) desc limit 16
 	</select>
+	
+	<select id="getMyPalettes" parameterType="int" resultType="kr.color.domain.userPalettes">
+	    select * from userPalettes where user_seq=#{user_seq};
+	</select>
 </mapper>

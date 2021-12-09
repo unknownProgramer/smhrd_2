@@ -1,5 +1,7 @@
 package kr.color.web;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.color.domain.UserInfo;
+import kr.color.domain.userPalettes;
 import kr.color.mapper.userMapper;
 
 @Controller
@@ -52,9 +55,15 @@ public class userController {
 		return "redirect:/";
 	}
 	
-	//마이페이지
+	// 마이페이지
 	@RequestMapping("/mypage")
 	public String mypage() {
 		return "mypage";
+	}
+	
+	// 내정보에 팔레트 저장하기
+	@RequestMapping("/insertMyPalettes.do")
+	public void insertMyPalettes(userPalettes vo) {
+		mapper.insertMyPalettes(vo);
 	}
 }

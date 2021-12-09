@@ -10,13 +10,10 @@
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="${cpath}/resources/css/style.css" />
-<link rel="stylesheet" href="${cpath}/resources/css/style1.css" />
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+<link rel="stylesheet" href="${cpath}/resources/css/style.css" />
+<link rel="stylesheet" href="${cpath}/resources/css/style1.css" />
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -110,6 +107,7 @@
 	top: 150%;
 	left: 50%;
 	margin-left: -60px;
+	z-index: 500;
 }
 
 .colorDiv .tooltip-bottom::after {
@@ -117,6 +115,7 @@
 	left: 50%;
 	margin-left: -5px;
 	border-color: transparent transparent black transparent;
+	z-index: 500;
 }
 /* 아래쪽 툴팁 끝 */
 </style>
@@ -189,8 +188,8 @@
 	<section id="portfolio">
 		<div class="container">
 			<!-- 텍스트 입력부 시작 -->
-			<section id="about" class="mz-module">
-				<div class="container light-bg">
+			<section id="about" class="mz-module light-bg">
+				<div class="container">
 					<div class="row">
 						<div class="col-lg-12 text-center">
 							<div class="section-title">
@@ -298,14 +297,14 @@
 							</div>
 						</div>
 					</form>
-					<div class="palettes_list" style="margin-top: 0%;">
+					<div class="palettes_list">
 						<ul id="palettes_result" class="palettes">
 						</ul>
 					</div>
 				</div>
 			</section>
-
-			<div class="palettes_list" style="margin-top: 0%">
+		</div>
+		<div class="palettes_list">
 				<ul class="palettes">
 					<c:forEach var="vo" items="${list}">
 						<li><a>
@@ -318,7 +317,6 @@
 					</c:forEach>
 				</ul>
 			</div>
-		</div>
 	</section>
 
 

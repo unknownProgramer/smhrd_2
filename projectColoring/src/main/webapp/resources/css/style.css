@@ -263,13 +263,14 @@ section {
     max-width: 1200px;
     padding-left: 0px;
     padding-right: 0px;
-    margin-top: 10%;
+    margin-top: 0%;
  }
  .palettes{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 40px;
     list-style: none;
+    padding: 0px;
  }
  .palettes>li{
     display: block;
@@ -286,6 +287,10 @@ section {
  .palettes>li>a>div{
     height: 50px;
     flex: 1;
+ }
+ 
+ #palettes_result {
+ 	padding: 0px;
  }
 
 
