@@ -320,17 +320,48 @@ th {
 			console.log(data[1])
 			for (let i=0; i<data.length; i++){
 				var view = "<li>";
-				view += "<a href='' title=''>";
-				view += "<div style='background-color: "+data[i].palette_color1+";'></div>";
-				view += "<div style='background-color: "+data[i].palette_color2+";'></div>";
-				view += "<div style='background-color: "+data[i].palette_color3+";'></div>";
-				view += "<div style='background-color: "+data[i].palette_color4+";'></div>";
-				view += "<div style='background-color: "+data[i].palette_color5+";'></div>";
-				view += "</a>";
+				view += "<div>";
+				view += "<div class='palette_color' style='background-color: "+data[i].palette_color1+";'>";
+				view += "<h3>"+data[i].palette_color1+"</h3>";
+				view += "</div>";
+				view += "<div class='palette_color' style='background-color: "+data[i].palette_color2+";'>";
+				view += "<h3>"+data[i].palette_color2+"</h3>";
+				view += "</div>";
+				view += "<div class='palette_color' style='background-color: "+data[i].palette_color3+";'>";
+				view += "<h3>"+data[i].palette_color3+"</h3>";
+				view += "</div>";
+				view += "<div class='palette_color' style='background-color: "+data[i].palette_color4+";'>";
+				view += "<h3>"+data[i].palette_color4+"</h3>";
+				view += "</div>";
+				view += "<div class='palette_color' style='background-color: "+data[i].palette_color5+";'>";
+				view += "<h3>"+data[i].palette_color5+"</h3>";
+				view += "</div>";
+				view += "</div>";
 				view += "</li>";
 				$("#palettes_result").append(view);
 			}
 		}
+		
+		// 클릭시 복사
+	    $(".palette_color").click(function() {
+	      var tmp = document.createElement("textarea");
+	      document.body.append(tmp);
+	      tmp.value = $(this).children().html();
+	      tmp.select();
+	      document.execCommand('copy');
+	      document.body.removeChild(tmp);
+	      $(this).children().html("Copied");
+	    });
+
+	    // 마우스 호버 헥스코드 표시/초기화
+	    var tmp_code
+	    $(".palette_color").hover(function() {
+	      tmp_code = $(this).children().html();
+	      $(this).children().css("display","inline");
+	    }, function() {
+	      $(this).children().css("display","none");
+	      $(this).children().html(tmp_code);
+	    });
 	</script>
 	<!-- 팔레트 불러오기 끝 -->
 </body>

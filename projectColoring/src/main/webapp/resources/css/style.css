@@ -287,7 +287,7 @@ section {
     display: block;
     width: 100%;
  }
- .palettes>li>a{
+ .palettes>li>div{
     width: 100%;
     padding: 0;
     display: flex;
@@ -295,9 +295,13 @@ section {
     border-radius: 5px;
     box-shadow: 0 0 2px rgb(0 0 0 / 10%);
  }
- .palettes>li>a>div{
+ .palettes>li>div>div{
     height: 50px;
     flex: 1;
+ }
+ 
+ .palette_color > h3 {
+ 	display: none;
  }
  
  #palettes_result {
