@@ -543,7 +543,7 @@
 	    });
 
 	    // 마우스 호버 헥스코드 표시/초기화
-	    var tmp_code
+	    var tmp_code 
 	    $(document).on("mouseover", ".palette_color", function() {
 	      tmp_code = $(this).children().html();
 	      $(this).children().css("display","inline");
