@@ -14,16 +14,4 @@
 		user_pwd=#{user_pwd};
 	</select>
 
-	<insert id="insertMyPalettes"
-		parameterType="kr.color.domain.userPalettes">
-		INSERT INTO userPalettes (palette_name, palette_color1,
-		palette_color2,
-		palette_color3, palette_color4, palette_color5,
-		regdit_date,
-		user_seq)
-		VALUES (#{palette_name}, #{palette_color1},
-		#{palette_color2}, #{palette_color3}, #{palette_color4},
-		#{palette_color5}, #{regdit_date}, #{user_seq},);
-	</insert>
-
 </mapper>

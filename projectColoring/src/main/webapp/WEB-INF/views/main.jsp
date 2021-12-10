@@ -150,12 +150,12 @@
 								aria-hidden="true">
 								<div class="modal-dialog" role="document">
 									<div class="login-form" style="margin-bottom: 10%">
-									<div style="text-align: center; margin-bottom: 10%;">
-										<img src="${cpath}/resources/images/colorLogo.png"
-											style="width: 50%; height: 50%;"> <img
-											src="${cpath}/resources//images/coloringLogo_small.png"
-											style="width: 50%; height: 50%;">
-									</div>
+										<div style="text-align: center; margin-bottom: 10%;">
+											<img src="${cpath}/resources/images/colorLogo.png"
+												style="width: 50%; height: 50%;"> <img
+												src="${cpath}/resources//images/coloringLogo_small.png"
+												style="width: 50%; height: 50%;">
+										</div>
 										<form action="${cpath}/Login.do" method="post">
 											<input type="text" name="user_id" class="text-field"
 												placeholder="아이디"> <input type="password"
@@ -283,7 +283,8 @@
 						</div>
 					</div>
 
-					<form class="palette-search-form" onsubmit="return false" style="margin-top: 40px">
+					<form class="palette-search-form" onsubmit="return false"
+						style="margin-top: 40px">
 						<div class="input-group" style="margin: 0% 20% 0% 20%;">
 							<input onkeypress="if( event.keyCode==13 ){sendInput();}"
 								id="inputText" type="text" class="form-control"
@@ -305,28 +306,33 @@
 			</section>
 		</div>
 		<div class="palettes_list">
-				<ul class="palettes">
-					<c:forEach var="vo" items="${list}">
-						<li><div>
-								<div class="palette_color" style="background-color: ${vo.palette_color1};">
-									<h3>${vo.palette_color1}</h3>
-								</div>
-								<div class="palette_color" style="background-color: ${vo.palette_color2};">
-									<h3>${vo.palette_color2}</h3>
-								</div>
-								<div class="palette_color" style="background-color: ${vo.palette_color3};">
-									<h3>${vo.palette_color3}</h3>
-								</div>
-								<div class="palette_color" style="background-color: ${vo.palette_color4};">
-									<h3>${vo.palette_color4}</h3>
-								</div>
-								<div class="palette_color" style="background-color: ${vo.palette_color5};">
-									<h3>${vo.palette_color5}</h3>
-								</div>
+			<ul class="palettes">
+				<c:forEach var="vo" items="${list}">
+					<li><div>
+							<div class="palette_color"
+								style="background-color: ${vo.palette_color1};">
+								<h3>${vo.palette_color1}</h3>
+							</div>
+							<div class="palette_color"
+								style="background-color: ${vo.palette_color2};">
+								<h3>${vo.palette_color2}</h3>
+							</div>
+							<div class="palette_color"
+								style="background-color: ${vo.palette_color3};">
+								<h3>${vo.palette_color3}</h3>
+							</div>
+							<div class="palette_color"
+								style="background-color: ${vo.palette_color4};">
+								<h3>${vo.palette_color4}</h3>
+							</div>
+							<div class="palette_color"
+								style="background-color: ${vo.palette_color5};">
+								<h3>${vo.palette_color5}</h3>
+							</div>
 						</div></li>
-					</c:forEach>
-				</ul>
-			</div>
+				</c:forEach>
+			</ul>
+		</div>
 	</section>
 
 
@@ -497,21 +503,22 @@
 				var view = "<li>";
 				view += "<div>";
 				view += "<div class='palette_color' style='background-color: "+data[i].palette_color1+";'>";
-				view += "<h3>"+data[i].palette_color1+"</h3>";
+				view += "<h3>" + data[i].palette_color1 + "</h3>";
 				view += "</div>";
 				view += "<div class='palette_color' style='background-color: "+data[i].palette_color2+";'>";
-				view += "<h3>"+data[i].palette_color2+"</h3>";
+				view += "<h3>" + data[i].palette_color2 + "</h3>";
 				view += "</div>";
 				view += "<div class='palette_color' style='background-color: "+data[i].palette_color3+";'>";
-				view += "<h3>"+data[i].palette_color3+"</h3>";
+				view += "<h3>" + data[i].palette_color3 + "</h3>";
 				view += "</div>";
 				view += "<div class='palette_color' style='background-color: "+data[i].palette_color4+";'>";
-				view += "<h3>"+data[i].palette_color4+"</h3>";
+				view += "<h3>" + data[i].palette_color4 + "</h3>";
 				view += "</div>";
 				view += "<div class='palette_color' style='background-color: "+data[i].palette_color5+";'>";
-				view += "<h3>"+data[i].palette_color5+"</h3>";
+				view += "<h3>" + data[i].palette_color5 + "</h3>";
 				view += "</div>";
 				view += "</div>";
+				view += "<a onclick='insertMyPalette(" +data[i].palette_seq+ ")' style='cursor: pointer;'>저장하기</a>"
 				view += "</li>";
 				$("#palettes_result").append(view).children(':last').hide()
 						.fadeIn();
@@ -530,28 +537,30 @@
 		$(document).ready(function() {
 			$(".colorDiv").tooltip();
 		});
-		
+
 		// 클릭시 복사
 		$(document).on("click", ".palette_color", function() {
-	      var tmp = document.createElement("textarea");
-	      document.body.append(tmp);
-	      tmp.value = $(this).children().html();
-	      tmp.select();
-	      document.execCommand('copy');
-	      document.body.removeChild(tmp);
-	      $(this).children().html("Copied");
-	    });
+			var tmp = document.createElement("textarea");
+			document.body.append(tmp);
+			tmp.value = $(this).children().html();
+			tmp.select();
+			document.execCommand('copy');
+			document.body.removeChild(tmp);
+			$(this).children().html("Copied");
+		});
 
-	    // 마우스 호버 헥스코드 표시/초기화
-	    var tmp_code 
-	    $(document).on("mouseover", ".palette_color", function() {
-	      tmp_code = $(this).children().html();
-	      $(this).children().css("display","inline");
-	    });
-	    $(document).on("mouseleave", ".palette_color", function() {
-	      $(this).children().css("display","none");
-	      $(this).children().html(tmp_code);
-	    });
+		// 마우스 호버 헥스코드 표시/초기화
+		var tmp_code
+		$(document).on("mouseover", ".palette_color", function() {
+			tmp_code = $(this).children().html();
+			$(this).children().css("display", "inline");
+		});
+		$(document).on("mouseleave", ".palette_color", function() {
+			$(this).children().css("display", "none");
+			$(this).children().html(tmp_code);
+		});
+
+		
 	</script>
 </body>
 </html>

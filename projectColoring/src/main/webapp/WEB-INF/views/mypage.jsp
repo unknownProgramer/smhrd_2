@@ -318,51 +318,68 @@ th {
 		function showPalettes(data) {
 			console.log(data)
 			console.log(data[1])
-			for (let i=0; i<data.length; i++){
+			for (let i = 0; i < data.length; i++) {
 				var view = "<li>";
 				view += "<div>";
 				view += "<div class='palette_color' style='background-color: "+data[i].palette_color1+";'>";
-				view += "<h3>"+data[i].palette_color1+"</h3>";
+				view += "<h3>" + data[i].palette_color1 + "</h3>";
 				view += "</div>";
 				view += "<div class='palette_color' style='background-color: "+data[i].palette_color2+";'>";
-				view += "<h3>"+data[i].palette_color2+"</h3>";
+				view += "<h3>" + data[i].palette_color2 + "</h3>";
 				view += "</div>";
 				view += "<div class='palette_color' style='background-color: "+data[i].palette_color3+";'>";
-				view += "<h3>"+data[i].palette_color3+"</h3>";
+				view += "<h3>" + data[i].palette_color3 + "</h3>";
 				view += "</div>";
 				view += "<div class='palette_color' style='background-color: "+data[i].palette_color4+";'>";
-				view += "<h3>"+data[i].palette_color4+"</h3>";
+				view += "<h3>" + data[i].palette_color4 + "</h3>";
 				view += "</div>";
 				view += "<div class='palette_color' style='background-color: "+data[i].palette_color5+";'>";
-				view += "<h3>"+data[i].palette_color5+"</h3>";
+				view += "<h3>" + data[i].palette_color5 + "</h3>";
 				view += "</div>";
 				view += "</div>";
+				view += "<span class='palettes_name'>" + data[i].palette_name + "</span>";
+				view += "<a onclick='deleteMyPalette(" + data[i].palette_seq + ")' style='cursor: pointer;'>삭제하기</a>";
 				view += "</li>";
 				$("#palettes_result").append(view);
 			}
 		}
-		
+
 		// 클릭시 복사
 		$(document).on("click", ".palette_color", function() {
-	      var tmp = document.createElement("textarea");
-	      document.body.append(tmp);
-	      tmp.value = $(this).children().html();
-	      tmp.select();
-	      document.execCommand('copy');
-	      document.body.removeChild(tmp);
-	      $(this).children().html("Copied");
-	    });
+			var tmp = document.createElement("textarea");
+			document.body.append(tmp);
+			tmp.value = $(this).children().html();
+			tmp.select();
+			document.execCommand('copy');
+			document.body.removeChild(tmp);
+			$(this).children().html("Copied");
+		});
 
-	    // 마우스 호버 헥스코드 표시/초기화
-	    var tmp_code
-	    $(document).on("mouseover", ".palette_color", function() {
-	      tmp_code = $(this).children().html();
-	      $(this).children().css("display","inline");
-	    });
-	    $(document).on("mouseleave", ".palette_color", function() {
-	      $(this).children().css("display","none");
-	      $(this).children().html(tmp_code);
-	    });
+		// 마우스 호버 헥스코드 표시/초기화
+		var tmp_code
+		$(document).on("mouseover", ".palette_color", function() {
+			tmp_code = $(this).children().html();
+			$(this).children().css("display", "inline");
+		});
+		$(document).on("mouseleave", ".palette_color", function() {
+			$(this).children().css("display", "none");
+			$(this).children().html(tmp_code);
+		});
+		
+		// 팔레트 삭제
+		function deleteMyPalette(seq) {
+			$.ajax({
+				url : "${cpath}/deleteMyPalette.do",
+				type : "get",
+				data : {
+					"seq" : seq
+				},
+				success : function(){location.reload();},
+				error : function() {
+					alert("error")
+				}
+			})
+		}
 	</script>
 	<!-- 팔레트 불러오기 끝 -->
 </body>

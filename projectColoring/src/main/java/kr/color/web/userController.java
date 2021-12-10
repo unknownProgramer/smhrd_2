@@ -61,9 +61,4 @@ public class userController {
 		return "mypage";
 	}
 	
-	// 내정보에 팔레트 저장하기
-	@RequestMapping("/insertMyPalettes.do")
-	public void insertMyPalettes(userPalettes vo) {
-		mapper.insertMyPalettes(vo);
-	}
 }
