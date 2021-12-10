@@ -532,7 +532,7 @@
 		});
 		
 		// 클릭시 복사
-	    $(".palette_color").click(function() {
+		$(document).on("click", ".palette_color", function() {
 	      var tmp = document.createElement("textarea");
 	      document.body.append(tmp);
 	      tmp.value = $(this).children().html();
@@ -544,10 +544,11 @@
 
 	    // 마우스 호버 헥스코드 표시/초기화
 	    var tmp_code
-	    $(".palette_color").hover(function() {
+	    $(document).on("mouseover", ".palette_color", function() {
 	      tmp_code = $(this).children().html();
 	      $(this).children().css("display","inline");
-	    }, function() {
+	    });
+	    $(document).on("mouseleave", ".palette_color", function() {
 	      $(this).children().css("display","none");
 	      $(this).children().html(tmp_code);
 	    });
