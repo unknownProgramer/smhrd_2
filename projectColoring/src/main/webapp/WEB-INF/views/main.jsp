@@ -288,7 +288,7 @@
 								id="inputText" type="text" class="form-control"
 								placeholder="Search" style="height: 40px;">
 							<div class="input-group-btn">
-								<button onclick="detectLang" class="btn btn-default"
+								<button onclick="detectLang()" class="btn btn-default"
 									type="button" id="searchColorBtn"
 									style="border: 1px solid #C0C0C0; height: 40px">
 									<i class="glyphicon glyphicon-search"></i>
@@ -483,24 +483,18 @@
 				type: "POST", 
 				contentType: "application/x-www-form-urlencoded", 
 				headers: { 
-					"Authorization": "KakaoAK 0de6a503aa4f3970c637816b7565e984" 
-					}, 
+					"Authorization": "KakaoAK 9b454e2d908098fe6dce2388f31113db" 
+				}, 
 				data: { 
 					query: $("#inputText").val()
-					}, 
+				}, 
 				success: function(data) { 
 					console.log("언어 감지 완료");
 					let txt_content = $("#inputText").val(); 
 					console.log(txt_content); 
-					$("#lang_detected").val(data.language_info[0].code); 
-					$("#tobetranslated").val(txt_content); 
 					var lang_code = data.language_info[0].code; 
 					translate(lang_code,txt_content);
-				}
-					// console.log(lang_code) 
-					// var a = $("#src_lang").val($("#query").text()); 
-					// console.log(a) 
-					// $("textarea#tobetranslated").append(""+data+""); }, 
+				},
 				error: function(jqXHR, textStatus, errorThrown) { 
 					console.log("언어 감지 실패") 
 					var errorMsg = "Ready Status: "; 
@@ -516,25 +510,25 @@
 			if (lang_code=="en") { 
 				sendInput(txt_content); 
 				return False 
-				} 
+			} 
 			$.ajax({ 
 				url: "https://dapi.kakao.com/v2/translation/translate", 
 				type: "POST", 
 				contentType: "application/x-www-form-urlencoded", 
 				headers: { 
-					"Authorization": "KakaoAK 0de6a503aa4f3970c637816b7565e984" 
-					}, 
+					"Authorization": "KakaoAK 9b454e2d908098fe6dce2388f31113db" 
+				}, 
 				data: { 
 					query: txt_content, 
 					src_lang : lang_code, 
 					target_lang : "en" 
-					}, 
+				}, 
 				success: function(data) { 
 					console.log("언어 번역 완료"); 
 					var txt_translated = data.translated_text[0][0]; 
 					console.log(txt_translated); 
 					sendInput(txt_translated); 
-					}, 
+				}, 
 				error: function(jqXHR, textStatus, errorThrown) { 
 					console.log("언어 번역 실패") 
 					var errorMsg = "Ready Status: "; 
@@ -545,14 +539,11 @@
 				} 
 			}); 
 		} 
-			
 		function sendInput(txt_translated) { 
 			$.ajax({ 
 				url : "${cpath}//genPalette.do", 
 				type : "get", 
-				data : { 
-					"inputText" : txt_translated 
-					}, 
+				data : {txt_translated}, 
 				dataType : "json", 
 				success : showPalResult, 
 				error : function() { 

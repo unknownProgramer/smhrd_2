@@ -21,9 +21,9 @@ public class AjaxController {
 
 	// 팔레트 생성하기
 	@RequestMapping("/genPalette.do")
-	public List<Palettes> genPalette(String inputText) {
-		System.out.println("입력 받은 값 : " + inputText);
-		List<Palettes> palettes = mapper.genPalette(inputText);
+	public List<Palettes> genPalette(String txt_translated) {
+		System.out.println("입력 받은 값 : " + txt_translated);
+		List<Palettes> palettes = mapper.genPalette(txt_translated);
 		Collections.shuffle(palettes);
 		return palettes;
 	}
