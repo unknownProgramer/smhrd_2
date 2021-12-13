@@ -14,6 +14,7 @@ VALUES ('a childs daydreams', '#fbfecf', '#a8eff5', '#f2d3ff', '#e6a0c5','#efccc
 select * from userInfo where user_id='userId01' and user_pwd='1234'
 
 delete from userInfo where user_id='userId05'
+
 use color;
 select * from userPalettes;
 -- userPalettes 생성 --
