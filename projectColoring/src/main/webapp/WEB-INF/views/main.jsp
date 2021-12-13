@@ -543,7 +543,7 @@
 			$.ajax({ 
 				url : "${cpath}//genPalette.do", 
 				type : "get", 
-				data : {txt_translated}, 
+				data : txt_translated, 
 				dataType : "json", 
 				success : showPalResult, 
 				error : function() { 
