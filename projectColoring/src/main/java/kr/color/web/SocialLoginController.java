@@ -1,5 +1,7 @@
 package kr.color.web;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -25,7 +27,7 @@ public class SocialLoginController {
 	userMapper mapper;
 	
 	@GetMapping(value = "kakao/login", produces = "application/json; charset=utf8")
-	public String kakaoLogin(String code) { // Data 리턴 해주는 컨트롤러 함수
+	public String kakaoLogin(String code, HttpSession session) { // Data 리턴 해주는 컨트롤러 함수
 		
 		// POST 방식으로 key=value 카카오 쪽으로 데이터 요청
 		// a type은 무조건 get 방식
@@ -117,22 +119,58 @@ public class SocialLoginController {
 		System.out.println("컬러링 비밀번호 :"+"password"+kakaoProfile.getId().toString().substring(6));		// 변수에 저장
 		System.out.println("컬러링 email :"+kakaoProfile.getKakao_account().getEmail());					// 변수에 저장
 		
+		// 우리 사이트에 가입시키는 정보
 		UserInfo kakaoUser = new UserInfo();
+		System.out.println(kakaoUser);
+		
 		kakaoUser.setUser_id("coloring"+kakaoProfile.getId().toString().substring(0,4));
-		kakaoUser.setUser_pwd("password"+kakaoProfile.getId().toString().substring(6));
-		kakaoUser.setUser_name(kakaoProfile.getProperties().getNickname());
-		kakaoUser.setUser_email(kakaoProfile.getKakao_account().getEmail());
-		kakaoUser.setUser_phone("카카오회원입니다");
-		kakaoUser.setAdminYn(0);
 		
 		// 카카오로 이미 가입(=로그인)한 적이 있는지 없는지 확인해서 처리
 		UserInfo kakaoUserCheck = mapper.checkId(kakaoUser);
-		kakaoUserCheck.getUser_id();
+		System.out.println(kakaoUserCheck);
+		System.out.println(kakaoUser.getUser_id());
+		System.out.println("1111111111111111111111");
 		
-		// DB에 등록 혹은 수정
 		
+		// 없으면 가입시키기 ( null이면 로그인(가입)한 적 없다 )
+		if (kakaoUserCheck != null) {
+			System.out.println("기존회원이 아니므로 자동으로 가입을 진행합니다.");
+			kakaoUser.setUser_id("coloring"+kakaoProfile.getId().toString().substring(0,4));
+			System.out.println(kakaoUser.getUser_id());
+			kakaoUser.setUser_pwd("password"+kakaoProfile.getId().toString().substring(6));
+			System.out.println(kakaoUser.getUser_pwd());
+			kakaoUser.setUser_name(kakaoProfile.getProperties().getNickname());
+			System.out.println(kakaoUser.getUser_name());
+			kakaoUser.setUser_email(kakaoProfile.getKakao_account().getEmail());
+			System.out.println(kakaoUser.getUser_email());
+			kakaoUser.setUser_phone("카카오회원입니다");
+			System.out.println(kakaoUser.getUser_phone());
+			
+			mapper.kakaoUserjoin(kakaoUser);
+			System.out.println(kakaoUserCheck);
+			
+			mapper.login(kakaoUser);
+			UserInfo userVO=mapper.login(kakaoUser);
+			System.out.println(userVO);
+			if(userVO!=null) {
+				session.setAttribute("userVO", userVO);
+				return "redirect:/";
+			}else {
+				return "redirect:/";
+			}
+		}
 		
-		return response2.getBody();
+		// 있으면 로그인시키기
+		else {
+			UserInfo userVO=mapper.login(kakaoUser);
+			System.out.println(userVO);
+				if(userVO!=null) {
+					session.setAttribute("userVO", userVO);
+					return "redirect:/";
+				}else {
+					return "redirect:/";
+				}
+		}
 	}
 
 }
