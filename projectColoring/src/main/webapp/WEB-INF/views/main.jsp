@@ -173,7 +173,7 @@
 						<li><a id="mypageBtn"
 							onClick="location.href='${cpath}/mypage'"
 							style="cursor: pointer;">MY PAGE</a></li>
-						<li><a id="logoutBtn" onClick="location.href='Logout.do'"
+						<li><a id="logoutBtn" href="https://kauth.kakao.com/oauth/logout?client_id=9b454e2d908098fe6dce2388f31113db&logout_redirect_uri=http://localhost:8081/web/kakao/logout"
 							style="cursor: pointer;">LOG OUT</a></li>
 
 					</c:if>

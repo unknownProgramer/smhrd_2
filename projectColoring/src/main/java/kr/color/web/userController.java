@@ -49,11 +49,11 @@ public class userController {
 	}
 	
 	// 로그아웃
-	@RequestMapping("/Logout.do")
-	public String logout(HttpSession session) {
-		session.invalidate();
-		return "redirect:/";
-	}
+//	@RequestMapping("/Logout.do")
+//	public String logout(HttpSession session) {
+//		session.invalidate();
+//		return "redirect:/";
+//	}
 	
 	// 마이페이지
 	@RequestMapping("/mypage")

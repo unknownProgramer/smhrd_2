@@ -1,5 +1,7 @@
 package kr.color.web;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -133,7 +137,7 @@ public class SocialLoginController {
 		
 		
 		// 없으면 가입시키기 ( null이면 로그인(가입)한 적 없다 )
-		if (kakaoUserCheck != null) {
+		if (kakaoUserCheck == null) {
 			System.out.println("기존회원이 아니므로 자동으로 가입을 진행합니다.");
 			kakaoUser.setUser_id("coloring"+kakaoProfile.getId().toString().substring(0,4));
 			System.out.println(kakaoUser.getUser_id());
@@ -147,7 +151,6 @@ public class SocialLoginController {
 			System.out.println(kakaoUser.getUser_phone());
 			
 			mapper.kakaoUserjoin(kakaoUser);
-			System.out.println(kakaoUserCheck);
 			
 			mapper.login(kakaoUser);
 			UserInfo userVO=mapper.login(kakaoUser);
@@ -159,11 +162,13 @@ public class SocialLoginController {
 				return "redirect:/";
 			}
 		}
-		
 		// 있으면 로그인시키기
 		else {
-			UserInfo userVO=mapper.login(kakaoUser);
-			System.out.println(userVO);
+			System.out.println("22222222222222222222222");
+			// setId로 설정한 id가 우리 db에 있는지 확인하기
+			System.out.println(kakaoUser.getUser_id());
+			UserInfo userVO=mapper.login(kakaoUserCheck);
+			System.out.println(kakaoUser);
 				if(userVO!=null) {
 					session.setAttribute("userVO", userVO);
 					return "redirect:/";
@@ -172,5 +177,37 @@ public class SocialLoginController {
 				}
 		}
 	}
+	
+	// 로그아웃
+	@RequestMapping(value = "kakao/logout")
+	public String Kakaologout(HttpSession session) throws Exception {
+		System.out.println("로그아웃 좀 해보자");
+//		// 세션 삭제
+//		RestTemplate rt = new RestTemplate();
+//		
+//		MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
+//		params.add("client_id", "9b454e2d908098fe6dce2388f31113db");
+//		params.add("redirect_uri", "http://localhost:8081/web/kakao/logout");
+//		
+//		// HttpHeader와 HttpBody를 하나의 object에 담기 
+//		HttpEntity<MultiValueMap<String, String>> kakaoTokenRequest = 
+//				new HttpEntity<>(params);
+		
+//		System.out.println(kakaoTokenRequest);
+		
+//		ResponseEntity<String> response1 = rt.exchange(
+//					"https://kauth.kakao.com/oauth/logout?client_id=9b454e2d908098fe6dce2388f31113db&logout_redirect_uri=http://localhost:8081/web/kakao/logout",
+//					HttpMethod.GET,
+//					kakaoTokenRequest,
+//					String.class
+//				);
+//		System.out.println(response1);
+		
+		//System.out.println(session.getAttribute("userVO"));
+		
+		session.invalidate();
+		
+		return "redirect:/";
+	}	
 
 }
