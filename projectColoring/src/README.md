@@ -196,6 +196,8 @@ mapper를 통해 웹에 뿌려주는 html은 1번과 동일하다.
 ```
 <h2>번외 : 로딩창 구현</h2>
 
+![image](https://user-images.githubusercontent.com/91005194/148257528-305d8298-356d-4788-93d1-1ed9d6d78409.png)
+
 <h3># How to do?</h3>
 LoadingOverlay 속성을 사용했다. 정말 쉽고 간단하다.
 우선 loadingOverlay.js 파일과 스피너 화면을 나타낼 BootStrap의 icon 파일이 필요하다.
