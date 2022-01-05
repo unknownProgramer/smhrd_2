@@ -1,8 +1,8 @@
 # Coloring
 
-<h3>1. Coloring 메인 페이지</h3>
-<h4>1. 1 로그인, 로그아웃 기능</h4>
-<h5>＃HTML</h5>
+<h1>1. Coloring 메인 페이지</h1>
+<h2>1. 1 로그인, 로그아웃 기능</h2>
+<h3>＃HTML</h3>
 
 ![image](https://user-images.githubusercontent.com/91005194/148245280-91b0052c-d0d6-435d-8153-d93f9909ba39.png)
 
@@ -52,11 +52,11 @@ $('#loginBtn').click(function(e) {
 		});
 ```
 
-<h5>＃How To Do?</h5>
+<h3>＃How To Do?</h3>
 로그인, 로그아웃같은 기능은 잘 알려져있고 구글링하면 쉽게 찾을 수 있으니 따로 설명은 하지 않겠다. <br><br>
 
-<h4>1. 2 단색 검색기능 및 툴팁기능</h4>
-<h5>＃HTML</h5>
+<h2>1. 2 단색 검색기능 및 툴팁기능</h2>
+<h3>＃HTML</h3>
 div 태그의 background 속성을 단색으로 설정했고, 버튼을 구현하기 위해 pointer 속성을 추가했다.
 
 ```html
@@ -241,7 +241,7 @@ div 태그의 background 속성을 단색으로 설정했고, 버튼을 구현�
 }
 </style>
 ```
-<h5>＃How To Do?</h5>
+<h3>＃How To Do?</h3>
 미리 div 태그의 id 속성에 색상 이름을 지정해 둔 후, 클릭시 id 속성을 input 태그 안에 넣고 클릭하게 했다.
 
 ```jsx
@@ -252,8 +252,8 @@ $(".colorDiv").click(function() {
 ```
 SQL QUERRY 문(select, delete, insert)은 생략하겠다.
 
-<h4>1. 3 검색 및 저장기능</h4>
-<h5>#HTML</h5>
+<h2>1. 3 검색 및 저장기능</h2>
+<h3>#HTML</h3>
 화면상에 저장과 삭제를 표현하기 위해 img 태그를 토글로 표현했다.
 
 ```jsx
@@ -288,7 +288,7 @@ success : function() {
 						</div>
 					</form>
 ```
-<h5>#How to do?</h5>
+<h3>#How to do?</h3>
 사용자가 입력한 Text값은 모델에서 생성된 결과를 보여주기 때문에 모델의 구현방식에 대해선 언급하지 않겠다.
 
 DB에 저장하기 위한 value 값을 Ajax 함수로 받아와 mapper와 연결시켰다.
@@ -369,8 +369,8 @@ $(document).on("click",".savePalette",
 
 SQL QUERRY 문(select, delete, insert)은 생략하겠다.
 
-<h4>1. 4 랜덤 팔레트 생성기능</h4>
-<h5>#HTML</h5>
+<h2>1. 4 랜덤 팔레트 생성기능</h2>
+<h3>#HTML</h3>
 mapper로 받아온 데이터를 웹에 뿌려주는 c:forEach문을 작성했다.
 
 랜덤으로 생성된 팔레트 같은 경우, 테스트용으로 모델에 돌려본 8천개의 팔레트 데이터를 DB에 저장후 그중 16개의 팔레트를 무작위로 뽑아낸것이다. seqeunce는 있으나 팔레트의 이름같은 경우, 모델의 결과값에 따라 달라지기 때문에 같은 Table로 묶지 않고 다른 Table에 저장한 값을 가져왔다.
@@ -406,7 +406,7 @@ mapper로 받아온 데이터를 웹에 뿌려주는 c:forEach문을 작성했�
 				</c:forEach>
 			</ul>
 ```
-<h5>#How to do?</h5>
+<h3>#How to do?</h3>
 Controller에서 "/" url 접근시 list를 반환하게끔 하는 mapper와 연동시켰다.
 
 ```java
